@@ -22,14 +22,14 @@ Repository for project Routine+
 ## File Organization
 * backend(folder)  
   * models(folder)  
-     model files
+     model files  
   * routes(folder)  
-     route files
+     route files  
   files(like server.js)  
   
 * src(folder)
   * components(folder)  
-     component files
+     component files  
   other files(like App.js)  
 
 * public(folder)  
