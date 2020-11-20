@@ -20,22 +20,22 @@ Repository for project Routine+
 * Delete: delete a routine
 
 ## File Organization
-Repo
-│  files(.gitignore etc.)
-│  
-├─backend
-│  │  files(server.js etc.)
+Repo  
+│  files(.gitignore etc.)  
+│    
+├─backend  
+│  │  files(server.js etc.)  
 │  │  
-│  ├─models
-│  │      model files
+│  ├─models  
+│  │      model files  
 │  │      
-│  └─routes
-│         route files
-├─src
-│  │  files(App.js etc.)
+│  └─routes  
+│         route files  
+├─src  
+│  │  files(App.js etc.)  
 │  │  
-│  ├─components
-│         component files
+│  ├─components  
+│         component files  
 │        
-└─public
-      index.html
+└─public  
+      index.html  
