@@ -21,21 +21,16 @@ Repository for project Routine+
 
 ## File Organization
 Repo  
-│  files(.gitignore etc.)  
-│    
-├─backend  
-│  │  files(server.js etc.)  
-│  │  
-│  ├─models  
-│  │      model files  
-│  │      
-│  └─routes  
-│         route files  
-├─src  
-│  │  files(App.js etc.)  
-│  │  
-│  ├─components  
-│         component files  
-│        
-└─public  
-      index.html  
+* files(.gitignore etc.)     
+* backend  
+  * files(server.js etc.)  
+  * models  
+    * model files  
+  * routes  
+    * route files  
+* src  
+  * files(App.js etc.)  
+  * components  
+    * component files  
+* public  
+  * index.html  
