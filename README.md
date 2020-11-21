@@ -2,7 +2,7 @@
 Repository for project Routine+
 
 ## Project description:
-* Routine+ is an online platform for individuals or teams to organize daily/weekly/monthly routines by creating task boards with different columns and dragging and dropping the tasks between them.
+Routine+ is an online platform for individuals or teams to organize daily/weekly/monthly routines by creating task boards with different columns and dragging and dropping the tasks between them.
 
 ## Methodology: 
 * Agile
