@@ -10,8 +10,8 @@ Routine+ is an online platform for individuals or teams to organize daily/weekly
 ## Project team:
 * Junfeng Zhou(zjf)
 * Vy Thai(thaivy) 
-* Yuan Yao(melofo) 
-* Wei Nien Chen(wtg30303)
+* Yuan Yao(melofo) (primary representative)
+* Wei Nien Chen(wtg30303) (alternate  representative)
 
 ## Functions
 * Create: create a new task board
