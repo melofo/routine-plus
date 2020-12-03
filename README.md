@@ -1,3 +1,6 @@
+## Updates
+Please find Project communication Plan right here in the home respository as a PDF
+
 # project-route-plus
 Repository for project Routine+
 
