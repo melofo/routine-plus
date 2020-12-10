@@ -10,7 +10,6 @@ export default function Home() {
     const [passwordCheck, setPasswordCheck] = useState();
     const [error, setError] = useState();
     const history = useHistory();
-
     // register
     const RegisterSubmit = async (e) => {
         e.preventDefault();
@@ -33,7 +32,6 @@ export default function Home() {
             err.response.data.msg && setError(err.response.data.msg);
         }
     };
-
     // login
     const loginSubmit = async (e) => {
         e.preventDefault();
@@ -53,8 +51,6 @@ export default function Home() {
         err.response.data.msg && setError(err.response.data.msg);
         }
     };
-
-
     return (
         <div className="page">
         {userData.user ? (
