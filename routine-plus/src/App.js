@@ -1,12 +1,13 @@
-import React, {Component} from 'react';
+import React,  { useState, useEffect }from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './components/home.component';
 import BlocksList from "./components/blocks-list.component";
 import EditBlock from "./components/edit-block.component";
 import CreateBlock from "./components/create-block.component";
-import UserContext from "./context/UserContext";
+import UserContext from "./userContext";
 import axios from "axios";
+
 
 export default function App() {
   const [userData, setUserData] = useState({
@@ -14,6 +15,7 @@ export default function App() {
     user: undefined,
   });
 
+  // this is used to initialize a token in localStorage and when "auth-token" in localStorage changes, set userData
   useEffect(() => {
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token");
@@ -27,7 +29,7 @@ export default function App() {
         { headers: { "x-auth-token": token } }
       );
       if (tokenRes.data) {
-        const userRes = await axios.get("http://localhost:5000/users/", {
+        const userRes = await axios.get("http://localhost:5000/user/", {
           headers: { "x-auth-token": token },
         });
         setUserData({
@@ -39,9 +41,21 @@ export default function App() {
     checkLoggedIn();
   }, []);
 
+  const logout = () => {
+    setUserData({
+      token: undefined,
+      user: undefined,
+    });
+    localStorage.setItem("auth-token", "");
+    window.location='/';
+  };
+
   return (
     <div className="app">
       <Router>
+      {userData.user ?(
+        <button onClick={logout}>Log out</button>
+      ):(<div></div>)}
       <UserContext.Provider value={{ userData, setUserData }}>
       <div className="container">
         <br/>
