@@ -26,6 +26,7 @@ export default function Home() {
             user: loginRes.data.user,
         });
         localStorage.setItem("auth-token", loginRes.data.token);
+        
         history.push("/blocks");
         } catch (err) {
             console.log(err);
@@ -63,6 +64,7 @@ export default function Home() {
         <div>
             {/* register part */}
             <div className="page">
+            <h1>Routine+</h1>
             <h2>Don't have an account? Sign up now!</h2>
             {error && (<div><span>{error}</span></div>)}
             <form className="form" onSubmit={RegisterSubmit}>

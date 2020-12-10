@@ -1,23 +1,27 @@
 const router = require('express').Router();
 let Block = require('../models/block.model');
+const auth = require("../middleware/auth");//by junfeng
 
-router.route('/').get((req, res) => {
-  Block.find()
+router.route('/').get(auth, (req, res) => {
+  Block.find({username: req.user})//by Junfeng
     .then(blocks => res.json(blocks))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/add').post((req, res) => {
+router.route('/add').post(auth, (req, res) => {
+  const username = req.user; //by Junfeng
   const image = req.body.image;
   const task = req.body.task;
   const routine = req.body.routine;
   const date = Date.parse(req.body.date);
   const newBlock = new Block({
+    username,//by Junfeng
     image,
     task,
     routine,
     date,
   });
+  
   newBlock.save()
   .then(() => res.json('Block added!'))
   .catch(err => res.status(400).json('Error: ' + err));

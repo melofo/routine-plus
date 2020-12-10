@@ -12,7 +12,7 @@ const Grid = require('gridfs-stream');
 
 // Create storage engine
 let gfs;
-const uri = "mongodb+srv://zjf:chaos23@cluster0.4uxkv.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri = "mongodb+srv://Junfeng:Junfeng@cluster0.5awtz.mongodb.net/<dbname>?retryWrites=true&w=majority";
 connection.once("open", () => {
   gfs = Grid(connection.db, mongo);
   gfs.collection("uploads");

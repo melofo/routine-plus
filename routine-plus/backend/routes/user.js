@@ -15,10 +15,6 @@ router.post("/register", async (req, res) => {
 
     if (!username || !password || !passwordCheck)
       return res.status(400).json({ msg: "Not all fields have been entered." });
-    if (password !== passwordCheck)
-      return res
-        .status(400)
-        .json({ msg: "Enter the same password twice for verification." });
 
     const existingUser = await User.findOne({ username: username });
     if (existingUser)
@@ -26,6 +22,11 @@ router.post("/register", async (req, res) => {
         .status(400)
         .json({ msg: "An account with this username already exists." });
 
+    if (password !== passwordCheck)
+        return res
+          .status(400)
+          .json({ msg: "Enter the same password twice for verification." });
+    
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
 

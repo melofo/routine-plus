@@ -12,6 +12,7 @@ export default class CreateBlock extends Component {
     this.onChangeRoutine = this.onChangeRoutine.bind(this);
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    
     this.state = {
       image: null,
       task: '',
@@ -19,6 +20,7 @@ export default class CreateBlock extends Component {
       date: new Date(),
     }
   }
+  
   onChangeImage(e) {
     e.preventDefault();
     const file = document.getElementById("inputGroupFile01").files;
@@ -30,8 +32,10 @@ export default class CreateBlock extends Component {
         body: formData
       }).then(r => {
         console.log(r);
+        document.getElementById("img").setAttribute("src", `http://localhost:5000/images/${file[0].name}`);
       });
-      document.getElementById("img").setAttribute("src", `http://localhost:5000/images/${file[0].name}`);
+      
+      
       this.setState({
         image: file[0].name
       })
@@ -60,13 +64,18 @@ export default class CreateBlock extends Component {
       routine: this.state.routine,
       date: this.state.date
     }
-    console.log(block);
+    
     if (block.image === null) {
       alert("Must have image!")
       return
     }
-    axios.post('http://localhost:5000/blocks/add', block)
+    
+    axios.post('http://localhost:5000/blocks/add', block, { headers: { "x-auth-token": localStorage.getItem("auth-token") } }) // by junfeng
       .then(res => console.log(res.data));
+    window.location = '/blocks';
+  }
+
+  onButtonCancel(e){
     window.location = '/blocks';
   }
   render() {
@@ -126,6 +135,7 @@ export default class CreateBlock extends Component {
           <input type="submit" value="Create Block Log" className="btn btn-primary" />
         </div>
       </form>
+      <button onClick={this.onButtonCancel}>Cancel</button>
     </div>
     )
   }

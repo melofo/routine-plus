@@ -53,18 +53,28 @@ export default function App() {
   return (
     <div className="app">
       <Router>
+      {/* once you login, you could never go to login page until you logout */}
       {userData.user ?(
+        <>
         <button onClick={logout}>Log out</button>
-      ):(<div></div>)}
-      <UserContext.Provider value={{ userData, setUserData }}>
+        <UserContext.Provider value={{ userData, setUserData }}>
       <div className="container">
         <br/>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={BlocksList} />
         <Route path="/blocks" component={BlocksList} />
         <Route path="/edit/:id" component={EditBlock} />
         <Route path="/create" component={CreateBlock} />
       </div>
       </UserContext.Provider>
+      </>
+      ):(<div>
+        <UserContext.Provider value={{ userData, setUserData }}>
+        <div className="container">
+        <Route exact path="/" component={Home} />
+        </div>
+      </UserContext.Provider>
+      </div>)}
+      
       </Router>
     </div>
   );
