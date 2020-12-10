@@ -57,6 +57,9 @@ export default class EditBlock extends Component {
       .then(res => console.log(res.data));
     window.location = '/blocks';
   }
+  onButtonCancel(){
+    window.location = '/blocks';
+  }
   render() {
     return (
     <div>
@@ -92,6 +95,7 @@ export default class EditBlock extends Component {
           <input type="submit" value="Edit Block Log" className="btn btn-primary" />
         </div>
       </form>
+      <button onClick={this.onButtonCancel}>Cancel</button>
     </div>
     )
   }

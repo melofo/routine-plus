@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 
+
 class Block extends Component {
   render() {
     var image = this.props.block.image;
@@ -31,7 +32,7 @@ export default class BlocksList extends Component {
     this.state = {blocks: []};
   }
   componentDidMount() {
-    axios.get('http://localhost:5000/blocks/')
+    axios.get('http://localhost:5000/blocks/', { headers: { "x-auth-token": localStorage.getItem("auth-token") } }) //by junfeng
       .then(response => {
         this.setState({blocks: response.data})
       })
