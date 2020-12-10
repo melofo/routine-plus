@@ -15,13 +15,9 @@ class Block extends Component {
         <td>{this.props.block.routine}</td>
         <td>{this.props.block.date.substring(0,10)}</td>
         <td>
-        {this.props.login === "LOGIN" ?
-            [
-              <Link to = {"/edit/"+this.props.block._id}>edit</Link>, <p> </p>,
-              <a href="#top" onClick={() => {this.props.deleteBlock(this.props.block._id)}}>delete</a>
-            ]
-          : null
-        }            
+          <Link to = {"/edit/"+this.props.block._id}>edit</Link> 
+          <p> </p>
+          <a href="#top" onClick={() => {this.props.deleteBlock(this.props.block._id)}}>delete</a>          
         </td>
       </tr>
     )
@@ -52,14 +48,13 @@ export default class BlocksList extends Component {
   }
   blockList() {
     return this.state.blocks.map(currentblock => {
-      return <Block login={this.props.loggedInStatus} block={currentblock} deleteBlock={this.deleteBlock} key={currentblock._id} />;
+      return <Block block={currentblock} deleteBlock={this.deleteBlock} key={currentblock._id} />;
     })
   }
   render() {
     return (
       <div>
-        {this.props.loggedInStatus === "LOGIN" &&
-        <Link to = {"/create"}>create</Link>}
+        <Link to = {"/create"}>create</Link>
         <table className="table">
           <thead className="thead-light">
             <tr>
@@ -67,8 +62,7 @@ export default class BlocksList extends Component {
               <th>Task</th>
               <th>Routine</th>
               <th>Date</th>
-              {this.props.loggedInStatus === "LOGIN" &&
-              <th>Actions</th>}
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
