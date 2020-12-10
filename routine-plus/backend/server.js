@@ -16,12 +16,17 @@ connection.once('open', ()=>{
     console.log("MongoDB database connection established successfully");
 });
 
+
+const usersRouter = require('./routes/user')
 const blockRouter = require('./routes/block');
 const imageRouter = require('./routes/image');
 
-app.use(cors()); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+app.use(cors()); 
 app.use('/blocks', blockRouter);
 app.use('/images', imageRouter);
+app.use('/user', usersRouter);
+
+
 
 app.listen(port, ()=>{
     console.log(`Server is running on port: ${port}`);
