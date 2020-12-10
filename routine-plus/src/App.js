@@ -5,31 +5,53 @@ import Home from './components/home.component';
 import BlocksList from "./components/blocks-list.component";
 import EditBlock from "./components/edit-block.component";
 import CreateBlock from "./components/create-block.component";
+import UserContext from "./context/UserContext";
 import axios from "axios";
 
+export default function App() {
+  const [userData, setUserData] = useState({
+    token: undefined,
+    user: undefined,
+  });
 
-export default class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <Router>
-        <div className="container">
-          <br/>
-          <Route exact path="/" render={props => (
-                <Home
-                  {...props}
-                />
-              )}/>
-          <Route path="/blocks" render={props => (
-                <BlocksList
-                  {...props}
-                />
-              )}/>
-          <Route path="/edit/:id" component={EditBlock} />
-          <Route path="/create" component={CreateBlock} />
-        </div>
-        </Router>
+  useEffect(() => {
+    const checkLoggedIn = async () => {
+      let token = localStorage.getItem("auth-token");
+      if (token === null) {
+        localStorage.setItem("auth-token", "");
+        token = "";
+      }
+      const tokenRes = await axios.post(
+        "http://localhost:5000/user/tokenIsValid",
+        null,
+        { headers: { "x-auth-token": token } }
+      );
+      if (tokenRes.data) {
+        const userRes = await axios.get("http://localhost:5000/users/", {
+          headers: { "x-auth-token": token },
+        });
+        setUserData({
+          token,
+          user: userRes.data,
+        });
+      }
+    };
+    checkLoggedIn();
+  }, []);
+
+  return (
+    <div className="app">
+      <Router>
+      <UserContext.Provider value={{ userData, setUserData }}>
+      <div className="container">
+        <br/>
+        <Route exact path="/" component={Home} />
+        <Route path="/blocks" component={BlocksList} />
+        <Route path="/edit/:id" component={EditBlock} />
+        <Route path="/create" component={CreateBlock} />
       </div>
-    );
-  }
+      </UserContext.Provider>
+      </Router>
+    </div>
+  );
 }
