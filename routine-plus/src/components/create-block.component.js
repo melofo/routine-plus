@@ -13,7 +13,7 @@ export default class CreateBlock extends Component {
     this.onChangeDate = this.onChangeDate.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
-      image: {},
+      image: null,
       task: '',
       routine: '',
       date: new Date(),
@@ -23,17 +23,19 @@ export default class CreateBlock extends Component {
     e.preventDefault();
     const file = document.getElementById("inputGroupFile01").files;
     const formData = new FormData();
-    formData.append("img", file[0]);
-    fetch("http://localhost:5000/images", {
-      method: "POST",
-      body: formData
-    }).then(r => {
-      console.log(r);
-    });
-    document.getElementById("img").setAttribute("src", `http://localhost:5000/images/${file[0].name}`);
-    this.setState({
-      image: file[0].name
-    })
+       if (file.length !== 0) {
+      formData.append("img", file[0]);
+      fetch("http://localhost:5000/images", {
+        method: "POST",
+        body: formData
+      }).then(r => {
+        console.log(r);
+      });
+      document.getElementById("img").setAttribute("src", `http://localhost:5000/images/${file[0].name}`);
+      this.setState({
+        image: file[0].name
+      })
+    }
   }
   onChangeTask(e) {
     this.setState({
@@ -59,6 +61,10 @@ export default class CreateBlock extends Component {
       date: this.state.date
     }
     console.log(block);
+    if (block.image === null) {
+      alert("Must have image!")
+      return
+    }
     axios.post('http://localhost:5000/blocks/add', block)
       .then(res => console.log(res.data));
     window.location = '/blocks';
