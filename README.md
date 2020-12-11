@@ -28,6 +28,8 @@ Repo
 * files(.gitignore etc.)     
 * backend  
   * files(server.js etc.)  
+  * middleware
+    * auth files  
   * models  
     * model files  
   * routes  
