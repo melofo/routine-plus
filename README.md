@@ -1,7 +1,10 @@
 ## Updates
-Please find Project communication Plan right here in the home respository as a PDF
+Please find Project communication Plan in docs as a PDF
 
-# project-route-plus
+# docs
+communication plan etc.
+
+# project-routine-plus
 Repository for project Routine+
 
 ## Project description:
@@ -11,10 +14,10 @@ Routine+ is an online platform for individuals or teams to organize daily/weekly
 * Agile
 
 ## Project team:
-* Junfeng Zhou(zjf)
+* Junfeng Zhou(zjf) - 001372433
 * Vy Thai(thaivy) 
-* Yuan Yao(melofo) (primary representative)
-* Wei Nien Chen(wtg30303) (alternate  representative)
+* Yuan Yao(melofo) (primary representative) - 001080783
+* Wei Nien Chen(wtg30303) (alternate  representative) - 001166046
 
 ## Functions
 * Create: create a new task board
@@ -28,6 +31,8 @@ Repo
 * files(.gitignore etc.)     
 * backend  
   * files(server.js etc.)  
+  * middleware
+    * auth files  
   * models  
     * model files  
   * routes  
@@ -38,3 +43,7 @@ Repo
     * component files  
 * public  
   * index.html  
+  
+  ## Link to the GitHub Pages landing page
+  
+  ## Link to the deployed application
