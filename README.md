@@ -1,8 +1,8 @@
+## Updates
+Please find Project communication Plan in docs as a PDF
+
 # docs
 communication plan etc.
-
-## Updates
-Please find Project communication Plan right here in the home respository as a PDF
 
 # project-routine-plus
 Repository for project Routine+
