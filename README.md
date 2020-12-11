@@ -38,3 +38,7 @@ Repo
     * component files  
 * public  
   * index.html  
+  
+  ## Link to the GitHub Pages landing page
+  
+  ## Link to the deployed application
