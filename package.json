@@ -2,7 +2,7 @@
   "name": "hellos",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/",
+  "homepage": "http://ccs.neu.edu/2020FACS5500SV.github.io/project-routine-plus",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
