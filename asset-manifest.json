@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/2020FACS5500SV/project-routine-plus/static/css/main.53ff4809.chunk.css",
+    "main.js": "/2020FACS5500SV/project-routine-plus/static/js/main.a4a904dc.chunk.js",
+    "main.js.map": "/2020FACS5500SV/project-routine-plus/static/js/main.a4a904dc.chunk.js.map",
+    "runtime-main.js": "/2020FACS5500SV/project-routine-plus/static/js/runtime-main.4dc3754c.js",
+    "runtime-main.js.map": "/2020FACS5500SV/project-routine-plus/static/js/runtime-main.4dc3754c.js.map",
+    "static/css/2.d08dc231.chunk.css": "/2020FACS5500SV/project-routine-plus/static/css/2.d08dc231.chunk.css",
+    "static/js/2.5f0e2c62.chunk.js": "/2020FACS5500SV/project-routine-plus/static/js/2.5f0e2c62.chunk.js",
+    "static/js/2.5f0e2c62.chunk.js.map": "/2020FACS5500SV/project-routine-plus/static/js/2.5f0e2c62.chunk.js.map",
+    "index.html": "/2020FACS5500SV/project-routine-plus/index.html",
+    "static/css/2.d08dc231.chunk.css.map": "/2020FACS5500SV/project-routine-plus/static/css/2.d08dc231.chunk.css.map",
+    "static/css/main.53ff4809.chunk.css.map": "/2020FACS5500SV/project-routine-plus/static/css/main.53ff4809.chunk.css.map",
+    "static/js/2.5f0e2c62.chunk.js.LICENSE.txt": "/2020FACS5500SV/project-routine-plus/static/js/2.5f0e2c62.chunk.js.LICENSE.txt",
+    "static/media/01.c1258708.jpeg": "/2020FACS5500SV/project-routine-plus/static/media/01.c1258708.jpeg",
+    "static/media/02.861f0b1f.jpeg": "/2020FACS5500SV/project-routine-plus/static/media/02.861f0b1f.jpeg",
+    "static/media/03.26fa385d.jpeg": "/2020FACS5500SV/project-routine-plus/static/media/03.26fa385d.jpeg",
+    "static/media/04.29b30d27.jpeg": "/2020FACS5500SV/project-routine-plus/static/media/04.29b30d27.jpeg",
+    "static/media/05.65da849d.jpeg": "/2020FACS5500SV/project-routine-plus/static/media/05.65da849d.jpeg",
+    "static/media/i1.ca9d89f6.png": "/2020FACS5500SV/project-routine-plus/static/media/i1.ca9d89f6.png",
+    "static/media/i2.303f2838.png": "/2020FACS5500SV/project-routine-plus/static/media/i2.303f2838.png",
+    "static/media/i3.599b8da8.png": "/2020FACS5500SV/project-routine-plus/static/media/i3.599b8da8.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4dc3754c.js",
+    "static/css/2.d08dc231.chunk.css",
+    "static/js/2.5f0e2c62.chunk.js",
+    "static/css/main.53ff4809.chunk.css",
+    "static/js/main.a4a904dc.chunk.js"
+  ]
+}
