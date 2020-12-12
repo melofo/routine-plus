@@ -20,11 +20,13 @@ Routine+ is an online platform for individuals or teams to organize daily/weekly
 * Wei Nien Chen(wtg30303) (alternate  representative) - 001166046
 
 ## Functions
-* Create: create a new task board
-* Create: create a daily/weekly/monthly routine within a board
-* Search: look for routine cards
-* Edit: edit an exist board/routine
-* Delete: delete a board/routine
+* Sign up: create a new user
+* Log in: log in an account
+* Log out: log out an account
+* Create: create a routine inside "to do" block
+* Drag and Drop: move routines between "to do", "doing" and "done" blocks acccording to their status
+* Edit: edit an exist routine
+* Delete: delete a routine
 
 ## File Organization
 Repo  
