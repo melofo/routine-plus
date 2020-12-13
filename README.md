@@ -47,4 +47,18 @@ Repo
   * components  
     * component files  
 * public  
-  * index.html  
+  * index.html
+  
+## Set up
+You’ll need to have Node 8.16.0 or Node 10.16.0 or later version on your local development machine (but it’s not required on the server). You can use nvm (macOS/Linux) or nvm-windows to switch Node versions between different projects.
+
+## How to run
+1. Clone project locally
+2. Make sure you're in the root of the project (`routine-plus/`) where package.json is
+3. `npm install`
+4. `npm start`
+5. `cd backend/`
+6. `npx nodemon server` **OR** `nodemon server`
+7. Navigate to http://localhost:3000/ to view the project
+
+### For more information, please refer to the [Wiki page](https://github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/wiki).
