@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/2020FACS5500SV/project-routine-plus/static/css/main.8173942e.chunk.css",
+    "main.css": "/2020FACS5500SV/project-routine-plus/static/css/main.64ebf68b.chunk.css",
     "main.js": "/2020FACS5500SV/project-routine-plus/static/js/main.c232b985.chunk.js",
     "main.js.map": "/2020FACS5500SV/project-routine-plus/static/js/main.c232b985.chunk.js.map",
     "runtime-main.js": "/2020FACS5500SV/project-routine-plus/static/js/runtime-main.4dc3754c.js",
@@ -10,7 +10,7 @@
     "static/js/2.93a2768a.chunk.js.map": "/2020FACS5500SV/project-routine-plus/static/js/2.93a2768a.chunk.js.map",
     "index.html": "/2020FACS5500SV/project-routine-plus/index.html",
     "static/css/2.d08dc231.chunk.css.map": "/2020FACS5500SV/project-routine-plus/static/css/2.d08dc231.chunk.css.map",
-    "static/css/main.8173942e.chunk.css.map": "/2020FACS5500SV/project-routine-plus/static/css/main.8173942e.chunk.css.map",
+    "static/css/main.64ebf68b.chunk.css.map": "/2020FACS5500SV/project-routine-plus/static/css/main.64ebf68b.chunk.css.map",
     "static/js/2.93a2768a.chunk.js.LICENSE.txt": "/2020FACS5500SV/project-routine-plus/static/js/2.93a2768a.chunk.js.LICENSE.txt",
     "static/media/01.c1258708.jpeg": "/2020FACS5500SV/project-routine-plus/static/media/01.c1258708.jpeg",
     "static/media/02.861f0b1f.jpeg": "/2020FACS5500SV/project-routine-plus/static/media/02.861f0b1f.jpeg",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.4dc3754c.js",
     "static/css/2.d08dc231.chunk.css",
     "static/js/2.93a2768a.chunk.js",
-    "static/css/main.8173942e.chunk.css",
+    "static/css/main.64ebf68b.chunk.css",
     "static/js/main.c232b985.chunk.js"
   ]
 }
