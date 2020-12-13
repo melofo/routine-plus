@@ -68,22 +68,6 @@ export default function App() {
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
-          </Fragment>
-        ) :
-          <Fragment>
-            <Navbar className="navbar" expand="lg">
-              <Navbar.Brand className="navbar-brand">Routine+</Navbar.Brand>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-              </Navbar.Collapse>
-            </Navbar>
-          </Fragment>
-        }
-
-        {/* once you login, you could never go to login page until you logout */}
-        {userData.user ? (
-          <>
-            {/* <button onClick={logout}>Log out</button> */}
             <UserContext.Provider value={{ userData, setUserData }}>
               <div className="container">
                 <br />
@@ -93,14 +77,20 @@ export default function App() {
                 <Route path="/create" component={CreateBlock} />
               </div>
             </UserContext.Provider>
-          </>
-        ) : (<div>
-          <UserContext.Provider value={{ userData, setUserData }}>
-            <div className="home-page">
-              <Route exact path="/" component={Home} />
-            </div>
-          </UserContext.Provider>
-        </div>)}
+
+          </Fragment>
+        ) :
+          <div>
+            <UserContext.Provider value={{ userData, setUserData }}>
+              <div className="home-page">
+                <Route path="/" component={Home} />
+              </div>
+            </UserContext.Provider>
+          </div>
+        }
+
+        {/* once you login, you could never go to login page until you logout */}
+            {/* <button onClick={logout}>Log out</button> */}
 
       </Router>
     </div>
