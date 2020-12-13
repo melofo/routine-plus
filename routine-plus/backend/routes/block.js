@@ -25,6 +25,7 @@ router.route('/add').post(auth, (req, res) => {
   const task = req.body.task;
   const routine = req.body.routine;
   const date = Date.parse(req.body.date);
+  const lastUpdateDate = Date.parse(req.body.lastUpdateDate);
   const newBlock = new Block({
     username,//by Junfeng
     image,
@@ -57,6 +58,7 @@ router.route('/update/:id').patch((req, res) => {
       block.routine = req.body.routine;
       block.date = Date.parse(req.body.date);
       block.status = req.body.status;
+      block.lastUpdateDate = req.body.lastUpdateDate;
       block.save()
         .then(() => res.json('Block updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
