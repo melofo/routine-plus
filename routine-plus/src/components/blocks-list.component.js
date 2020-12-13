@@ -269,7 +269,7 @@ export default class BlocksList extends Component {
               );
             })}
           </DragDropContext>
-          <button className="create-button"><Link to={"/create"} className="create-link">+</Link></button>
+          <Link to={"/create"}><button className="create-button">+</button></Link>
         </Row>
       </Fragment>
     )
