@@ -3,6 +3,12 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
+//front end
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import './styling/create.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 export default class CreateBlock extends Component {
   constructor(props) {
     super(props);
@@ -74,62 +80,59 @@ export default class CreateBlock extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="create-container">
         <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Image: </label>
-            <div className="container">
-              <div className="input-group mb-3">
-                <div className="custom-file">
-                  <input
-                    type="file"
-                    className="custom-file-input"
-                    id="inputGroupFile01"
-                    aria-describedby="inputGroupFileAddon01"
-                  />
-                  <label className="custom-file-label" htmlFor="inputGroupFile01">
-                    Choose file
-                </label>
-                </div>
-              </div>
-              <button type="button" className="btn btn-primary" onClick={this.onChangeImage}>
-                Upload
+        <div className="form-group">
+          <label>Image: </label>
+          <div className="inner">
+          <Form>
+          <div className="mb-3">
+            <Form.File id="formcheck-api-regular">
+              <Form.File.Label htmlFor="inputGroupFile01">Image:</Form.File.Label>
+              <Form.File.Input id="inputGroupFile01"/>
+            </Form.File>
+          </div>
+        </Form>
+            <button type="button" className="btn btn-primary" onClick={this.onChangeImage}>
+              Upload
             </button>
-              <img id="img" style={{ display: "block" }} alt=""></img>
-            </div>
+            <img id="img" style={{ display: "block" }} alt=""></img>
           </div>
-          <div className="form-group">
-            <label>Task: </label>
-            <input type="text"
-              required
-              className="form-control"
-              value={this.state.task}
-              onChange={this.onChangeTask}
+        </div>
+        <div className="form-group">
+          <label>Task: </label>
+          <input type="text"
+            required
+            className="form-control"
+            value={this.state.task}
+            onChange={this.onChangeTask}
+          />
+        </div>
+        <div className="form-group">
+          <label>Routine: </label>
+          <input type="text"
+            required
+            className="form-control"
+            value={this.state.routine}
+            onChange={this.onChangeRoutine}
+          />
+        </div>
+        <div className="form-group">
+          <label>Date: </label>
+          <div>
+            <DatePicker
+              selected={this.state.date}
+              onChange={this.onChangeDate}
             />
           </div>
-          <div className="form-group">
-            <label>Routine: </label>
-            <input type="text"
-              required
-              className="form-control"
-              value={this.state.routine}
-              onChange={this.onChangeRoutine}
-            />
-          </div>
-          <div className="form-group">
-            <label>Date: </label>
-            <div>
-              <DatePicker
-                selected={this.state.date}
-                onChange={this.onChangeDate}
-              />
-            </div>
-          </div>
-          <div className="form-group">
-            <input type="submit" value="Create Block Log" className="btn btn-primary" />
-          </div>
-        </form>
-        <button onClick={this.onButtonCancel}>Cancel</button>
+        </div>
+        <div className="form-group">
+          <input type="submit" value="Create Block Log" className="btn btn-primary" />
+        </div>
+      </form>
+      <h1> hello</h1>
+      <button onClick={this.onButtonCancel}>Cancel</button>
+
       </div>
     )
   }

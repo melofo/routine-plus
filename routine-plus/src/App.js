@@ -70,7 +70,6 @@ export default function App() {
             </Navbar>
             <UserContext.Provider value={{ userData, setUserData }}>
               <div className="container">
-                <br />
                 <Route exact path="/" component={BlocksList} />
                 <Route path="/blocks" component={BlocksList} />
                 <Route path="/edit/:id" component={EditBlock} />
