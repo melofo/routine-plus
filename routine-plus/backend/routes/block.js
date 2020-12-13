@@ -3,8 +3,19 @@ let Block = require('../models/block.model');
 const auth = require("../middleware/auth");//by junfeng
 
 router.route('/').get(auth, (req, res) => {
-  Block.find({username: req.user})//by Junfeng
+  Block.find({ username: req.user })//by Junfeng
     .then(blocks => res.json(blocks))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/replace').put((req, res) => {
+  Block.find({ username: req.user })
+    .then(blocks => {
+      blocks = req.body
+      blocks.save()
+        .then(() => res.json('Block updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -21,10 +32,10 @@ router.route('/add').post(auth, (req, res) => {
     routine,
     date,
   });
-  
+
   newBlock.save()
-  .then(() => res.json('Block added!'))
-  .catch(err => res.status(400).json('Error: ' + err));
+    .then(() => res.json('Block added!'))
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').get((req, res) => {
@@ -45,6 +56,7 @@ router.route('/update/:id').patch((req, res) => {
       block.task = req.body.task;
       block.routine = req.body.routine;
       block.date = Date.parse(req.body.date);
+      block.status = req.body.status;
       block.save()
         .then(() => res.json('Block updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
