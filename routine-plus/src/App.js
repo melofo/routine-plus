@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-=======
-import React,  { useState, useEffect }from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
 //frontend
->>>>>>> changed layout of home page, added hover effects, focus effect
 import "bootstrap/dist/css/bootstrap.min.css";
-<<<<<<< HEAD
-import './App.css';
-=======
 import "./App.css";
->>>>>>> 90% finished home page. reluctact to fix bootstrap form
+
 import Home from './components/home.component';
 import BlocksList from "./components/blocks-list.component";
 import EditBlock from "./components/edit-block.component";
