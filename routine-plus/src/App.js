@@ -58,7 +58,7 @@ export default function App() {
         {userData.user ? (
           <Fragment>
             <Navbar className="navbar" expand="lg">
-              <Navbar.Brand className="navbar-brand" href="#home">Routine+ <span style={{ color: "#08deff" }}>{userData.user.username}</span></Navbar.Brand>
+              <Navbar.Brand className="navbar-brand"><span style={{ color: "#08deff" }}>{userData.user.username}</span>'s Routine+</Navbar.Brand>
               <Navbar.Toggle className="custom-toggler" aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
@@ -70,7 +70,7 @@ export default function App() {
         ) :
           <Fragment>
             <Navbar className="navbar" expand="lg">
-              <Navbar.Brand className="navbar-brand" href="#home">Routine+</Navbar.Brand>
+              <Navbar.Brand className="navbar-brand">Routine+</Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
               </Navbar.Collapse>

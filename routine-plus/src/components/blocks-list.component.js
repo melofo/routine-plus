@@ -6,7 +6,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { render } from '@testing-library/react';
 import { userContext } from '../userContext';
 import { Row, Col, Button, Container } from 'react-bootstrap';
-
+import ReactLoading from 'react-loading'
 class Block extends Component {
   render() {
     var image = this.props.block.image;
@@ -117,6 +117,7 @@ export default class BlocksList extends Component {
     this.state = { blocks: [], columns: [] };
   }
   componentDidMount() {
+    setTimeout(() => {
     const today = new Date().getTime()/ (1000 * 60 * 60 * 24); // by junfeng
     axios.get('http://localhost:5000/blocks/', { headers: { "x-auth-token": localStorage.getItem("auth-token") } }) //by junfeng
       .then(response => {
@@ -144,28 +145,30 @@ export default class BlocksList extends Component {
         // console.log('doing: ', doing)
         // console.log('done: ', done)
 
-        this.setState({
-          blocks: bks,
-          columns: {
-            [uuid()]: {
-              name: "Todo",
-              items: todo
+          this.setState({
+            blocks: bks,
+            columns: {
+              [uuid()]: {
+                name: "Todo",
+                items: todo
+              },
+              [uuid()]: {
+                name: "Doing",
+                items: doing
+              },
+              [uuid()]: {
+                name: "Done",
+                items: done
+              }
             },
-            [uuid()]: {
-              name: "Doing",
-              items: doing
-            },
-            [uuid()]: {
-              name: "Done",
-              items: done
-            }
-          }
+            done: true
+          })
+          console.log(this.state.columns)
         })
-        console.log(this.state.columns)
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+        .catch((error) => {
+          console.log(error);
+        })
+    }, 300)
   }
 
   // false when from todo to doing, true when do nothing
@@ -299,31 +302,36 @@ export default class BlocksList extends Component {
   render() {
     return (
       <Fragment>
-        <Row style={{ display: "flex", justifyContent: "center", height: "100%" }} >
-          <DragDropContext onDragEnd={result => this.onDragEnd(result, this.state.columns)}>
-            {Object.entries(this.state.columns).map(([columnId, column], index) => {
-              return (
-                <div
-                  className="columns-container"
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    fontFamily: "\"Courier New\", cursive"
-                  }}
-                  key={columnId}
-                >
-                  <h3 className="column-title">{column.name}</h3>
-                  <div style={{ margin: "8px" }}>
-                    <DragColumn columnId={columnId} column={column} deleteBlock={this.deleteBlock} />
-                  </div>
-                </div>
-              );
-            })}
-          </DragDropContext>
-          <button className="create-button"><Link to={"/create"} className="create-link">+</Link></button>
-        </Row>
+        {!this.state.done ? (
+          <ReactLoading className="spinner" type={"cylon"} color={"white"} />
+        ) : (
+            <Row style={{ display: "flex", justifyContent: "center", height: "100%" }} >
+              <DragDropContext onDragEnd={result => this.onDragEnd(result, this.state.columns)}>
+                {Object.entries(this.state.columns).map(([columnId, column], index) => {
+                  return (
+                    <div
+                      className="columns-container"
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        fontFamily: "\"Courier New\", cursive"
+                      }}
+                      key={columnId}
+                    >
+                      <h3 className="column-title">{column.name}</h3>
+                      <div style={{ margin: "8px" }}>
+                        <DragColumn columnId={columnId} column={column} deleteBlock={this.deleteBlock} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </DragDropContext>
+              <Link to={"/create"}><button className="create-button">+</button></Link>
+            </Row>
+          )}
       </Fragment>
+
     )
   }
 }
