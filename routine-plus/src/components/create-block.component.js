@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-
 
 export default class CreateBlock extends Component {
   constructor(props) {
@@ -17,13 +16,14 @@ export default class CreateBlock extends Component {
       task: '',
       routine: '',
       date: new Date(),
+      status: 'Todo'
     }
   }
   onChangeImage(e) {
     e.preventDefault();
     const file = document.getElementById("inputGroupFile01").files;
     const formData = new FormData();
-       if (file.length !== 0) {
+    if (file.length !== 0) {
       formData.append("img", file[0]);
       fetch("http://localhost:5000/images", {
         method: "POST",
@@ -31,7 +31,7 @@ export default class CreateBlock extends Component {
       }).then(r => {
         console.log(r);
         document.getElementById("img").setAttribute("src", `http://localhost:5000/images/${file[0].name}`);
-      }); 
+      });
       this.setState({
         image: file[0].name
       })
@@ -58,7 +58,8 @@ export default class CreateBlock extends Component {
       image: this.state.image,
       task: this.state.task,
       routine: this.state.routine,
-      date: this.state.date
+      date: this.state.date,
+      status: this.state.status,
     }
     if (block.image === null) {
       alert("Must have image!")
@@ -68,68 +69,68 @@ export default class CreateBlock extends Component {
       .then(res => console.log(res.data));
     window.location = '/blocks';
   }
-  onButtonCancel(e){
+  onButtonCancel(e) {
     window.location = '/blocks';
   }
   render() {
     return (
-    <div>
-      <form onSubmit={this.onSubmit}>
-        <div className="form-group"> 
-          <label>Image: </label>
-          <div className="container">
-            <div className="input-group mb-3">
-              <div className="custom-file">
-                <input
-                  type="file"
-                  className="custom-file-input"
-                  id="inputGroupFile01"
-                  aria-describedby="inputGroupFileAddon01"
-                />
-                <label className="custom-file-label" htmlFor="inputGroupFile01">
-                  Choose file
+      <div>
+        <form onSubmit={this.onSubmit}>
+          <div className="form-group">
+            <label>Image: </label>
+            <div className="container">
+              <div className="input-group mb-3">
+                <div className="custom-file">
+                  <input
+                    type="file"
+                    className="custom-file-input"
+                    id="inputGroupFile01"
+                    aria-describedby="inputGroupFileAddon01"
+                  />
+                  <label className="custom-file-label" htmlFor="inputGroupFile01">
+                    Choose file
                 </label>
+                </div>
               </div>
-            </div>
-            <button type="button" className="btn btn-primary" onClick={this.onChangeImage}>
-              Upload
+              <button type="button" className="btn btn-primary" onClick={this.onChangeImage}>
+                Upload
             </button>
-            <img id="img" style={{display: "block"}} alt=""></img>
+              <img id="img" style={{ display: "block" }} alt=""></img>
+            </div>
           </div>
-        </div>
-        <div className="form-group"> 
-          <label>Task: </label>
-          <input type="text"
+          <div className="form-group">
+            <label>Task: </label>
+            <input type="text"
               required
               className="form-control"
               value={this.state.task}
               onChange={this.onChangeTask}
-              />
-        </div>
-        <div className="form-group"> 
-          <label>Routine: </label>
-          <input type="text"
+            />
+          </div>
+          <div className="form-group">
+            <label>Routine: </label>
+            <input type="text"
               required
               className="form-control"
               value={this.state.routine}
               onChange={this.onChangeRoutine}
-              />
-        </div>
-        <div className="form-group">
-          <label>Date: </label>
-          <div>
-            <DatePicker
-              selected={this.state.date}
-              onChange={this.onChangeDate}
             />
           </div>
-        </div>
-        <div className="form-group">
-          <input type="submit" value="Create Block Log" className="btn btn-primary" />
-        </div>
-      </form>
-      <button onClick={this.onButtonCancel}>Cancel</button>
-    </div>
+          <div className="form-group">
+            <label>Date: </label>
+            <div>
+              <DatePicker
+                selected={this.state.date}
+                onChange={this.onChangeDate}
+              />
+            </div>
+          </div>
+          <div className="form-group">
+            <input type="submit" value="Create Block Log" className="btn btn-primary" />
+          </div>
+        </form>
+        <button onClick={this.onButtonCancel}>Cancel</button>
+      </div>
     )
   }
 }

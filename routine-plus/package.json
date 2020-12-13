@@ -10,6 +10,7 @@
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.3",
+    "react-bootstrap": "^1.4.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -31,7 +32,9 @@
     "react-scripts": "^4.0.1",
     "react-typing-animation": "^1.6.2",
     "web-vitals": "^0.2.4",
-    "express-jwt": "^6.0.0"
+    "express-jwt": "^6.0.0",
+    "react-beautiful-dnd": "8.0.5",
+    "uuid": "3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",
