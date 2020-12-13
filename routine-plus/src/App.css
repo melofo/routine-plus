@@ -74,6 +74,7 @@
 }
 
 .navbar-brand {
+  cursor: pointer;
   font-size: 40px !important;
   color: white !important;
   margin-left: 1%;
@@ -149,6 +150,10 @@
   box-shadow: 0 0 10px var(--pink);
 }
 
+.create-button:active {
+  background-color: var(--dark-gray);
+}
+
 .routine-image-container {
   width: 70px;
   height: 70px;
@@ -191,4 +196,10 @@
 .col-sm-9 {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
+}
+
+.spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%
 }
