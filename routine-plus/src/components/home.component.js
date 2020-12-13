@@ -3,6 +3,19 @@ import UserContext from "../userContext";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
+//front end
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Styles from './styling/home.scss';
+//front end logo
+import Logo from "./images/logoDark.png";
+import Image from 'react-bootstrap/Image'
+
+
+
 export default function Home() {
     const { userData, setUserData } = useContext(UserContext);
     const [username, setUsername] = useState();
@@ -25,13 +38,14 @@ export default function Home() {
             user: loginRes.data.user,
         });
         localStorage.setItem("auth-token", loginRes.data.token);
-        
+
         history.push("/blocks");
         } catch (err) {
             console.log(err);
             err.response.data.msg && setError(err.response.data.msg);
         }
     };
+
     // login
     const loginSubmit = async (e) => {
         e.preventDefault();
@@ -52,52 +66,79 @@ export default function Home() {
         }
     };
     return (
-        <div className="page">
-        {userData.user ? (
-            <h1>Welcome {userData.user.username}</h1>
-        ) : (
-        
-        <div>
-            {/* register part */}
-            <div className="page">
-            <h1>Routine+</h1>
-            <h2>Don't have an account? Sign up now!</h2>
-            {error && (<div><span>{error}</span></div>)}
-            <form className="form" onSubmit={RegisterSubmit}>
-                <label htmlFor="register-username">please enter username</label>
-                <input
-                onChange={(e) => setUsername(e.target.value)}
-                />
-                <label htmlFor="register-password">please enter password</label>
-                <input
-                onChange={(e) => setPassword(e.target.value)}
-                />
-                <label htmlFor="register-passwordCheck">enter password again</label>
-                <input
-                onChange={(e) => setPasswordCheck(e.target.value)}
-                />
-                <input type="submit" value="Sign up" />
-            </form>
-            </div>
 
-            {/* login part */}
-            <div className="page">
-            <h2>Already have an account? Log in now!</h2>
-            {error && (<div><span>{error}</span></div>)}
-            <form className="form" onSubmit={loginSubmit}>
-                <label htmlFor="register-username">please enter username</label>
-                <input
-                onChange={(e) => setUsername(e.target.value)}
-                />
-                <label htmlFor="register-password">please enter password</label>
-                <input
-                onChange={(e) => setPassword(e.target.value)}
-                />
-                <input type="submit" value="Log in" />
-            </form>
+      <Row className="no-gutters">
+        <Col className="no-gutters">
+          <div className="left-side d-flex justify-content-center align-items-center" tabindex="-1">
+            <Image className="left-logo" src={Logo} alt="logo routine plus"/>
+            <div className="disc d-flex justify-content-center align-items-center">{error && (<div><span>{error}</span></div>)}</div>
+          </div>
+        </Col>
+
+        <Col className="no-gutters">
+          <Row className="no-gutters">
+            <div className="right-top d-flex justify-content-center align-items-center" tabindex="2">
+
+
+              <Form onSubmit={loginSubmit} className="login-button">
+                <Form.Group controlId="formBasicUserName">
+                  <Form.Label>Username</Form.Label>
+                  <Form.Control type="text" placeholder="Enter Username"
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="formBasicPassword">
+                  <Form.Label>Password</Form.Label>
+                  <Form.Control type="password" placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                  Sign In
+                </Button>
+              </Form>
+
+              <h3 className="regular-text"> no hover</h3>
             </div>
-        </div>
-        )}
-        </div>
+          </Row>
+          <Row className="no-gutters">
+            <div className="right-bottom d-flex justify-content-center align-items-center" tabindex="2">
+
+
+                <Form onSubmit={RegisterSubmit} className="signup-page">
+                  <Form.Group controlId="formBasicUserName">
+                    <Form.Label>New Username</Form.Label>
+                    <Form.Control type="text" placeholder="Set New Username"
+                    onChange={(e) => setUsername(e.target.value)}
+                    />
+                  </Form.Group>
+
+                  <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Set Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password"
+                      onChange={(e) => setPassword(e.target.value)}
+                     />
+                    <Form.Text className="text-muted">
+                      Never share your password with anyone. Not even your boyfriend.
+                    </Form.Text>
+                  </Form.Group>
+                  <Form.Group controlId="formPasswordConfirm">
+                    <Form.Label>Re-Enter Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password"
+                      onChange={(e) => setPasswordCheck(e.target.value)}
+                     />
+                  </Form.Group>
+                  <Button variant="primary" type="submit">
+                    Sign Up
+                  </Button>
+                </Form>
+
+              <h3 className="regular-text"> no hover</h3>
+            </div>
+          </Row>
+        </Col>
+      </Row>
+
     );
 }

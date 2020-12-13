@@ -1,0 +1,71 @@
+@import "~bootstrap/scss/bootstrap";
+
+.left-side  {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.left-side {
+  left: 0px;
+  background: #094376;
+}
+
+.right-top {
+  background: blue;
+}
+
+.right-bottom {
+
+  background: yellow;
+}
+
+.right-top, .right-bottom {
+  height: 50vh;
+  width: 100%;
+  z-index: 2;
+}
+
+.container {
+  min-height: 100%;
+}
+
+img.left-logo {
+  height: 200px;
+}
+
+// error message location
+.disc {
+  width: 24em;
+  height: 16em;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  right: -12em;
+  bottom: 0px;
+  z-index: 2;
+}
+
+/* right side hover logic */
+.right-top:hover, .right-bottom:hover {
+  background-color: pink;
+}
+
+.form-group, .login-button {
+  display: none;
+}
+
+.regular-text {
+  position: absolute;
+}
+
+.right-top:focus, .right-top:focus-within{
+  background-color: orange;
+  .form-group, .login-button {
+    display: block;
+  }
+  .regular-text {
+      opacity: 0;
+  }
+
+}

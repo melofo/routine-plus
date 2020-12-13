@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, Fragment } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+=======
+import React,  { useState, useEffect }from 'react';
+import {BrowserRouter as Router, Route} from "react-router-dom";
+//frontend
+>>>>>>> changed layout of home page, added hover effects, focus effect
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import Home from './components/home.component';
@@ -94,7 +100,7 @@ export default function App() {
           </>
         ) : (<div>
           <UserContext.Provider value={{ userData, setUserData }}>
-            <div className="container">
+            <div className="hello">
               <Route exact path="/" component={Home} />
             </div>
           </UserContext.Provider>
