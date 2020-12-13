@@ -33,8 +33,7 @@ export default class CreateBlock extends Component {
     fileChosen.textContent = file[0].name;
   }
 
-  onChangeImage(e) {
-    e.preventDefault();
+  onChangeImage() {
 
     const file = document.getElementById("inputGroupFile01").files;
 
@@ -64,7 +63,7 @@ export default class CreateBlock extends Component {
     })
     //after entering routine, image function will be called
     //gets rid of the upload button
-    // this.onChangeImage();
+    this.onChangeImage();
   }
   onChangeDate(date) {
     this.setState({
