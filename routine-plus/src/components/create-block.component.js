@@ -16,7 +16,7 @@ export default class CreateBlock extends Component {
       task: '',
       routine: '',
       date: new Date(),
-      status: 'Todo'
+      status: 'Todo',
     }
   }
   onChangeImage(e) {
