@@ -1,15 +1,18 @@
-## Updates
-Please find Project communication Plan in docs as a PDF
+## Repository directory
 
-# docs
-communication plan etc.
+| Directory | Description |
+| --- | --- |
+| docs/ | Project landing page, communications plan, APIs, requirements, design, architecture, test plan, team organization PDFs |
+| routine-plus/ | Main codebase of the project |
 
-# project-routine-plus
-Repository for project Routine+
+## Welcome to Routine+ !
+Routine+ is an online platform for individuals or teams to organize daily/weekly/monthly routines by creating task boards with different columns and dragging and dropping the tasks between them. It features a beautiful drag-and-drop UI to allow a user to seamlessly manage their Tasks.
 
-## Project description:
-Routine+ is an online platform for individuals or teams to organize daily/weekly/monthly routines by creating task boards with different columns and dragging and dropping the tasks between them.
+The application is a full-stack service that is built using the MERN stack and external libraries such as axios, mongoose, and react-beautiful-rnd.
 
+## Deployed Routine+ website (coming soon..)
+## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
+  
 ## Methodology: 
 * Agile
 
@@ -19,7 +22,7 @@ Routine+ is an online platform for individuals or teams to organize daily/weekly
 * Yuan Yao(melofo) (primary representative) - 001080783
 * Wei Nien Chen(wtg30303) (alternate  representative) - 001166046
 
-## Functions
+## Features
 * Sign up: create a new user
 * Log in: log in an account
 * Log out: log out an account
@@ -40,12 +43,8 @@ Repo
   * routes  
     * route files  
 * src  
-  * files(App.js etc.)  
+  * files(App.js, App.css etc.)  
   * components  
     * component files  
 * public  
   * index.html  
-  
-  ## Link to the GitHub Pages landing page
-  
-  ## Link to the deployed application
