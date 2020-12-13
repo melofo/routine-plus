@@ -1,4 +1,3 @@
 ### How to run
-1. cd routine-plus
-2. npm install
-3. npx nodemon server **OR** nodemon server
+1. npm install
+2. npx nodemon server **OR** nodemon server
