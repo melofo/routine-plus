@@ -25,9 +25,19 @@ export default class CreateBlock extends Component {
       status: 'Todo'
     }
   }
+  //event listener to change name of span
+  onChangeFileInputName(e) {
+    // console.log("We are here");
+    const file = document.getElementById("inputGroupFile01").files;
+    const fileChosen = document.getElementById("file-chosen");
+    fileChosen.textContent = file[0].name;
+  }
+
   onChangeImage(e) {
     e.preventDefault();
+
     const file = document.getElementById("inputGroupFile01").files;
+
     const formData = new FormData();
     if (file.length !== 0) {
       formData.append("img", file[0]);
@@ -52,6 +62,9 @@ export default class CreateBlock extends Component {
     this.setState({
       routine: e.target.value
     })
+    //after entering routine, image function will be called
+    //gets rid of the upload button
+    // this.onChangeImage();
   }
   onChangeDate(date) {
     this.setState({
@@ -79,40 +92,43 @@ export default class CreateBlock extends Component {
     window.location = '/blocks';
   }
   render() {
+
     return (
-      <div className="create-container">
-        <form onSubmit={this.onSubmit}>
+      <div className="create-container d-flex justify-content-center align-items-center" >
+      <div className="test">
+        <form className="create-form" onSubmit={this.onSubmit}>
         <div className="form-group">
-          <label>Image: </label>
-          <div className="inner">
-          <Form>
-          <div className="mb-3">
-            <Form.File id="formcheck-api-regular">
-              <Form.File.Label htmlFor="inputGroupFile01">Image:</Form.File.Label>
-              <Form.File.Input id="inputGroupFile01"/>
-            </Form.File>
-          </div>
-        </Form>
-            <button type="button" className="btn btn-primary" onClick={this.onChangeImage}>
-              Upload
-            </button>
-            <img id="img" style={{ display: "block" }} alt=""></img>
-          </div>
+          <h2> New Routine </h2>
+
+
+            <div className="mb-3">
+              <Form.File id="formcheck-api-regular">
+                <Form.File.Label className="psuedo-upload btn btn-neon" htmlFor="inputGroupFile01">Select an Image</Form.File.Label> {/* custom upload button, actually a label*/}
+                <span id="file-chosen" style={{paddingLeft: "10px"}}> No file chosen</span> {/* file-chosen*/}
+                <Form.File.Input id="inputGroupFile01" className="input-field" onChange={this.onChangeFileInputName} hidden/> {/* actual-btn*/}
+              </Form.File>
+            </div>
+
+          {/* gets rid of upload button*/}
+          {/* <img id="img" style={{ display: "block" }} alt=""></img> */}
+
         </div>
         <div className="form-group">
-          <label>Task: </label>
+
           <input type="text"
             required
-            className="form-control"
+            className="input-field"
+            placeholder="Task"
             value={this.state.task}
             onChange={this.onChangeTask}
           />
         </div>
         <div className="form-group">
-          <label>Routine: </label>
+
           <input type="text"
             required
-            className="form-control"
+            className="input-field"
+            placeholder="Routine"
             value={this.state.routine}
             onChange={this.onChangeRoutine}
           />
@@ -127,11 +143,12 @@ export default class CreateBlock extends Component {
           </div>
         </div>
         <div className="form-group">
-          <input type="submit" value="Create Block Log" className="btn btn-primary" />
+          <input type="submit" value="Create Block Log" className="btn btn-neon" />
         </div>
+        <button class="btn btn-cancel" onClick={this.onButtonCancel}>Cancel</button>
       </form>
-      <h1> hello</h1>
-      <button onClick={this.onButtonCancel}>Cancel</button>
+      </div>
+
 
       </div>
     )
