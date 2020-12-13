@@ -138,18 +138,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.create-button:hover {
-  box-shadow: 0 0 10px var(--pink);
-}
-
-.create-link {
   color:  var(--pink) !important;
   font-size: 50px;
   text-decoration: none !important;
   text-shadow: 0px 0px 2px var(--dark-pink),
   0px 0px 15px rgba(255, 110, 255, 0.8);
+}
+
+.create-button:hover {
+  box-shadow: 0 0 10px var(--pink);
 }
 
 .routine-image-container {
