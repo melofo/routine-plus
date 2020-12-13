@@ -1,7 +1,7 @@
 import React, {useState, useContext } from "react";
 import UserContext from "../userContext";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 //front end
 import Form from 'react-bootstrap/Form'
@@ -69,15 +69,20 @@ export default function Home() {
 
       <Row className="no-gutters">
         <Col className="no-gutters">
+
           <div className="left-side d-flex justify-content-center align-items-center" tabindex="-1">
-            <Image className="left-logo" src={Logo} alt="logo routine plus"/>
-            <div className="disc d-flex justify-content-center align-items-center">{error && (<div><span>{error}</span></div>)}</div>
+            <a href="https://www.youtube.com/watch?v=LQ8JOsc3-wU&t=2s&ab_channel=MedSchoolInsiders">
+              <Image className="left-logo" src={Logo} alt="logo routine plus"/>
+            </a>
           </div>
+
         </Col>
+
 
         <Col className="no-gutters">
           <Row className="no-gutters">
             <div className="right-top d-flex justify-content-center align-items-center" tabindex="2">
+
 
 
               <Form onSubmit={loginSubmit} className="login-button">
@@ -97,16 +102,17 @@ export default function Home() {
                 <Button variant="primary" type="submit">
                   Sign In
                 </Button>
+                <div className="error-message-1">{error && (<div><span>{error}</span></div>)} </div>
               </Form>
 
-              <h3 className="regular-text"> no hover</h3>
+              <h3 className="regular-text"> Existing User</h3>
             </div>
           </Row>
           <Row className="no-gutters">
             <div className="right-bottom d-flex justify-content-center align-items-center" tabindex="2">
 
 
-                <Form onSubmit={RegisterSubmit} className="signup-page">
+                <Form onSubmit={RegisterSubmit} className="signup-button">
                   <Form.Group controlId="formBasicUserName">
                     <Form.Label>New Username</Form.Label>
                     <Form.Control type="text" placeholder="Set New Username"
@@ -132,9 +138,10 @@ export default function Home() {
                   <Button variant="primary" type="submit">
                     Sign Up
                   </Button>
+                  <div className="error-message-2">{error && (<div><span>{error}</span></div>)} </div>
                 </Form>
 
-              <h3 className="regular-text"> no hover</h3>
+              <h3 className="regular-text"> New User</h3>
             </div>
           </Row>
         </Col>

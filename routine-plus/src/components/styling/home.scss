@@ -1,29 +1,36 @@
 @import "~bootstrap/scss/bootstrap";
 
+
+
+h3.regular-text {
+  font-family: 'Comfortaa', cursive;
+  color: #61d2b4;
+  text-shadow: 1px 1px 0px #9dfdc7;
+
+}
+
 .left-side  {
   position: relative;
   height: 100vh;
   width: 100%;
-}
-
-.left-side {
+  border-radius: 5px;
   left: 0px;
   background: #094376;
 }
 
-.right-top {
-  background: blue;
+.left-side:hover {
+  box-shadow: -1px -1px 10px 3px #FF6EFF inset, 1px 1px 10px 3px #FF6EFF inset;
 }
 
-.right-bottom {
-
-  background: yellow;
+.right-top, .right-bottom {
+  background: #094376;
 }
 
 .right-top, .right-bottom {
   height: 50vh;
   width: 100%;
   z-index: 2;
+  border-radius: 5px;
 }
 
 .container {
@@ -43,15 +50,15 @@ img.left-logo {
   position: absolute;
   right: -12em;
   bottom: 0px;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* right side hover logic */
 .right-top:hover, .right-bottom:hover {
-  background-color: pink;
+  box-shadow: -1px -1px 10px 3px #FF6EFF inset, 1px 1px 10px 3px #FF6EFF inset;
 }
 
-.form-group, .login-button {
+.form-group, .login-button, .signup-button {
   display: none;
 }
 
@@ -59,9 +66,22 @@ img.left-logo {
   position: absolute;
 }
 
+// right top when focused - show form
 .right-top:focus, .right-top:focus-within{
-  background-color: orange;
+  background-color: rgba(157, 253, 199, 0.5);
   .form-group, .login-button {
+    display: block;
+  }
+  .regular-text {
+      opacity: 0;
+  }
+
+}
+
+// right bottom when focused - show form
+.right-bottom:focus, .right-bottom:focus-within{
+  background-color: rgba(157, 253, 199, 0.5);
+  .form-group, .signup-button {
     display: block;
   }
   .regular-text {

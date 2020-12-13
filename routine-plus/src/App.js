@@ -7,7 +7,11 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 //frontend
 >>>>>>> changed layout of home page, added hover effects, focus effect
 import "bootstrap/dist/css/bootstrap.min.css";
+<<<<<<< HEAD
 import './App.css';
+=======
+import "./App.css";
+>>>>>>> 90% finished home page. reluctact to fix bootstrap form
 import Home from './components/home.component';
 import BlocksList from "./components/blocks-list.component";
 import EditBlock from "./components/edit-block.component";
@@ -100,7 +104,7 @@ export default function App() {
           </>
         ) : (<div>
           <UserContext.Provider value={{ userData, setUserData }}>
-            <div className="hello">
+            <div className="home-page">
               <Route exact path="/" component={Home} />
             </div>
           </UserContext.Provider>
