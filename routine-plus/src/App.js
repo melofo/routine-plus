@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import Home from './components/home.component';
-import BlocksList from "./components/blocks-board.component";
+import BlocksList from "./components/blocks-list.component";
 import EditBlock from "./components/edit-block.component";
 import CreateBlock from "./components/create-block.component";
 import UserContext from "./userContext";
