@@ -13,10 +13,10 @@ The application is a full-stack service that is built using the MERN stack and e
 ## Deployed Routine+ website (coming soon..)
 ## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
   
-## Methodology: 
+## Methodology:
 * Agile
 
-## Project team:
+## Project team
 * Junfeng Zhou(zjf) - 001372433
 * Vy Thai(thaivy) 
 * Yuan Yao(melofo) (primary representative) - 001080783
