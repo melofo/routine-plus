@@ -108,7 +108,7 @@ export default class CreateBlock extends Component {
             <div className="mb-3">
               <Form.File id="formcheck-api-regular">
                 <Form.File.Label className="psuedo-upload btn btn-neon" htmlFor="inputGroupFile01">Select an Image</Form.File.Label> {/* custom upload button, actually a label*/}
-                <span id="file-chosen" style={{paddingLeft: "10px"}}> No file chosen</span> {/* file-chosen*/}
+                <span id="file-chosen" style={{paddingLeft: "10px", color: "grey"}}> No file chosen</span> {/* file-chosen*/}
                 <Form.File.Input id="inputGroupFile01" className="input-field" onChange={this.onChangeFileInputName} hidden/> {/* actual-btn*/}
               </Form.File>
             </div>
@@ -138,9 +138,9 @@ export default class CreateBlock extends Component {
           />
         </div>
         <div className="form-group">
-          <label>Date: </label>
+          <label className="date-label">Date: </label>
           <div>
-            <DatePicker
+            <DatePicker className="input-date-create"
               selected={this.state.date}
               onChange={this.onChangeDate}
             />
