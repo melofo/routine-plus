@@ -35,6 +35,8 @@ h3.regular-text {
   background-repeat: no-repeat;
   color:  #ffb3ff;
   font-family: 'Baloo Thambi 2', cursive;
+  font-weight: bold;
+  text-shadow: 0.5px 0.5px 0 #990000;
 
 }
 
@@ -48,6 +50,8 @@ h3.regular-text {
   background-repeat: no-repeat;
   color:  #ffb3ff;
   font-family: 'Baloo Thambi 2', cursive;
+  font-weight: bold;
+  text-shadow: 0.5px 0.5px 0 #990000;
 
 }
 
@@ -88,6 +92,12 @@ img.right-top {
 
 .right-top .form-group, .right-bottom .form-group, .login-button, .signup-button {
   display: none;
+}
+
+.login-button, .signup-button {
+  background-color: rgba(22, 90, 94, 0.3);
+  padding: 30px;
+  border-radius: 5px;
 }
 
 .regular-text {

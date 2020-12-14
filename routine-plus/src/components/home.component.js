@@ -71,7 +71,7 @@ export default function Home() {
         <Col className="no-gutters">
         <div className="right-top d-flex justify-content-center align-items-center" tabindex="2">
 
-        
+
 
 
 
@@ -89,7 +89,7 @@ export default function Home() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="primary" className="btn-neon" type="submit">
               Sign In
             </Button>
             <div className="error-message-1">{error && (<div><span>{error}</span></div>)} </div>
@@ -109,7 +109,7 @@ export default function Home() {
             <Form onSubmit={RegisterSubmit} className="signup-button">
               <Form.Group controlId="formBasicUserName">
                 <Form.Label>New Username</Form.Label>
-                <Form.Control type="text" placeholder="Set New Username"
+                <Form.Control type="text" placeholder="Enter Username"
                 onChange={(e) => setUsername(e.target.value)}
                 />
               </Form.Group>
@@ -129,7 +129,7 @@ export default function Home() {
                   onChange={(e) => setPasswordCheck(e.target.value)}
                  />
               </Form.Group>
-              <Button variant="primary" type="submit">
+              <Button variant="primary" className="btn-neon" type="submit">
                 Sign Up
               </Button>
               <div className="error-message-2">{error && (<div><span>{error}</span></div>)} </div>
