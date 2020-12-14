@@ -70,8 +70,8 @@ export default function Home() {
       <Row className="no-gutters">
         <Col className="no-gutters">
         <div className="right-top d-flex justify-content-center align-items-center" tabindex="2">
+
         
-          <Image src="./images/logo.png" placeholder="logo"/>
 
 
 

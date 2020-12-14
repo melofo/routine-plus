@@ -109,7 +109,7 @@ export default class CreateBlock extends Component {
             </div>
 
           {/* gets rid of upload button*/}
-          {/* <img id="img" style={{ display: "block" }} alt=""></img> */}
+          <img id="img" style={{ display: "none" }} alt=""></img>
 
         </div>
         <div className="form-group">
