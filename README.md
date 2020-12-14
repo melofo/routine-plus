@@ -24,12 +24,12 @@
 | docs/ | Project landing page, communications plan, APIs, requirements, design, architecture, test plan, team organization PDFs |
 | routine-plus/ | Main codebase of the project |
 
-## Welcome to Routine+ !
+## Welcome to Routine+
 Routine+ is an online platform for individuals or teams to organize daily/weekly/monthly routines by creating task boards with different columns and dragging and dropping the tasks between them. It features a beautiful drag-and-drop UI to allow a user to seamlessly manage their Tasks.
 
 The application is a full-stack service that is built using the MERN stack and external libraries such as axios, mongoose, and react-beautiful-rnd.
 
-## Routine+ Website (coming soon..)
+## Routine+ Website
 ## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
   
 ## Software Development Process (Methodology):
