@@ -101,6 +101,7 @@ export default class CreateBlock extends Component {
               <div className="mb-3">
                 <Form.File id="formcheck-api-regular">
                   <Form.File.Label className="psuedo-upload btn btn-neon" htmlFor="inputGroupFile01">Select an Image</Form.File.Label> {/* custom upload button, actually a label*/}
+                  
                   <span id="file-chosen" style={{ paddingLeft: "10px", color: "grey" }}> No file chosen</span> {/* file-chosen*/}
                   <button type="button" className="btn btn-secondary btn-sm" onClick={this.onChangeImage}>Upload</button>
 
