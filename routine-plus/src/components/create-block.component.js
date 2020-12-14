@@ -30,7 +30,12 @@ export default class CreateBlock extends Component {
     // console.log("We are here");
     const file = document.getElementById("inputGroupFile01").files;
     const fileChosen = document.getElementById("file-chosen");
-    fileChosen.textContent = file[0].name;
+    if (file[0].name.length > 12) {
+        fileChosen.textContent = file[0].name.slice(0,13) + "...";
+    }
+    else {
+      fileChosen.textContent = file[0].name;
+    }
   }
 
   onChangeImage() {
