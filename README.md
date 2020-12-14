@@ -10,7 +10,7 @@
 </h1>
   <h3 align="center">Routine Plus. A Better You. Everyday</h3>
 <p align="center">
-  <a href="#welcome-to-routine+">Introduction</a> •
+  <a href="#welcome-to-routine-">Introduction</a> •
   <a href="#routine+-website">Website</a> •
   <a href="#software-development-process">Process</a> •
   <a href="#credits">Credits</a> •
