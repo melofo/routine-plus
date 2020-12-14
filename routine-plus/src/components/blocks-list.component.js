@@ -113,7 +113,7 @@ export default class BlocksList extends Component {
   constructor(props) {
     super(props);
     this.deleteBlock = this.deleteBlock.bind(this);
-    
+
     this.state = { blocks: [], columns: [] };
   }
   componentDidMount() {
@@ -159,8 +159,8 @@ export default class BlocksList extends Component {
     let period = element.routine;
     let startDay = new Date(element.date).getTime()/ (1000 * 60 * 60 * 24);
     let lastUpdateDay = new Date(element.lastUpdateDate).getTime()/ (1000 * 60 * 60 * 24);
-    if (element.status === "Todo" && 
-    today - startDay> 0 && 
+    if (element.status === "Todo" &&
+    today - startDay> 0 &&
     (Math.floor(today-startDay, period) > Math.floor(lastUpdateDay-startDay, period))){
       console.log('false');
       this.updateStatus(element._id, 'Doing');
