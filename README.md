@@ -47,11 +47,17 @@ The application is a full-stack service that is built using the MERN stack and e
 
 ## Instructions
 * Routine Plus allows you to keep track of all the Routines you wish to integrate into your life style
-* After you created a Routine, it could have a daily/weekly/monthly frequency, the Routine will appear in the "Do It" block
+* After you created a Routine, it could have a daily/weekly/monthly frequency, the Routine will appear in the "Sprint" block, awaiting to be completed
 * Whenever you complete this Routine, drag and drop the Routine into the "Backlog" block
-* Routine+ automatically moves the Routine to the "Do It" block when the set frequency date range has been reached
+* Routine+ automatically moves the Routine to the "Sprint" block when the set frequency date range has been reached
 * Drag your Routine to the "Archive" block whenever you are feel like breaking away from this Routine and want to keep it for records
 
+<h5> A new Routine has been created witing to be completed</h5>
+<img src="./1.jpg" width="700" height="400">
+<h5> After working out, simply drag and rop the Routine to the Backlog block <br> and let the Routine+ do the rest!</h5>
+<img src="./2.jpg" width="700" height="400">
+<h5> Since this is a weekly routine, Routine+ will move it back to the "Spring" when it reached the 7th day</h5>
+<img src="./1.jpg" width="700" height="400">
 
 
 ## File Organization
