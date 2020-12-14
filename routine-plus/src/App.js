@@ -82,7 +82,7 @@ export default function App() {
           <div>
             <UserContext.Provider value={{ userData, setUserData }}>
               <div className="home-page">
-                <Route path="/" component={Home} />
+                <Route exact path="/" component={Home} />
               </div>
             </UserContext.Provider>
           </div>
