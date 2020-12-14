@@ -10,7 +10,7 @@ Routine+ is an online platform for individuals or teams to organize daily/weekly
 
 The application is a full-stack service that is built using the MERN stack and external libraries such as axios, mongoose, and react-beautiful-rnd.
 
-## [Deployed Routine+ website] (https://routine-plus.herokuapp.com/)
+## [Deployed Routine+ website](https://routine-plus.herokuapp.com/)
 ## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
   
 ## Methodology:
