@@ -37,11 +37,8 @@
     "react-scripts": "^4.0.1",
     "react-typing-animation": "^1.6.2",
     "uuid": "3.3.3",
-<<<<<<< HEAD
-    "web-vitals": "^0.2.4"
-=======
+    "web-vitals": "^0.2.4",
     "react-loading": "2.0.3"
->>>>>>> master
   },
   "scripts": {
     "start": "react-scripts start",
