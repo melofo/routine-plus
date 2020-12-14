@@ -12,7 +12,7 @@
 <p align="center">
   <a href="#welcome-to-routine+">Introduction</a> •
   <a href="#routine+-website">Website</a> •
-  <a href="#download">Download</a> •
+  <a href="#software-development-process">Process</a> •
   <a href="#credits">Credits</a> •
   <a href="#related">Related</a> •
   <a href="#license">License</a>
@@ -32,7 +32,7 @@ The application is a full-stack service that is built using the MERN stack and e
 ## Routine+ Website
 ## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
   
-## Software Development Process (Methodology):
+## Software Development Process
 * Agile
 
 ## Project Team
