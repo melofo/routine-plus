@@ -113,7 +113,7 @@ export default class BlocksList extends Component {
   constructor(props) {
     super(props);
     this.deleteBlock = this.deleteBlock.bind(this);
-    
+
     this.state = { blocks: [], columns: [] };
   }
   componentDidMount() {
@@ -122,22 +122,11 @@ export default class BlocksList extends Component {
     axios.get('http://localhost:5000/blocks/', { headers: { "x-auth-token": localStorage.getItem("auth-token") } }) //by junfeng
       .then(response => {
         const bks = response.data
-        //by junfeng
-        // check if the time is up
-        bks.forEach(element => {
-          let period = element.routine;
-          let startDay = new Date(element.date).getTime()/ (1000 * 60 * 60 * 24);
-          let lastUpdateDay = new Date(element.lastUpdateDate).getTime()/ (1000 * 60 * 60 * 24);
-          if (element.status === "Todo" && 
-          today - startDay> 0 && 
-          (Math.floor(today-startDay, period) > Math.floor(lastUpdateDay-startDay, period))){
-            console.log(Math.floor(today-startDay, period));
-            console.log(Math.floor(lastUpdateDay-startDay, period));
-            this.updateStatus(element._id, 'Doing');
-          }
-        });
 
-        
+
+
+
+
         const todo = bks.filter((b) => b.status === 'Todo' && this.checkDate(b))
         const doing = bks.filter((b) => !this.checkDate(b) || b.status === 'Doing')
         const done = bks.filter((b) => b.status === 'Done')
@@ -173,14 +162,15 @@ export default class BlocksList extends Component {
 
   // false when from todo to doing, true when do nothing
   checkDate(element){
-    const today = new Date().getTime()/ (1000 * 60 * 60 * 24);
+    const today = Math.floor(new Date().getTime()/ (1000 * 60 * 60 * 24));
     let period = element.routine;
-    let startDay = new Date(element.date).getTime()/ (1000 * 60 * 60 * 24);
-    let lastUpdateDay = new Date(element.lastUpdateDate).getTime()/ (1000 * 60 * 60 * 24);
-    if (element.status === "Todo" && 
-    today - startDay> 0 && 
+    let startDay = Math.floor(new Date(element.date).getTime()/ (1000 * 60 * 60 * 24));
+    let lastUpdateDay = Math.floor(new Date(element.lastUpdateDate).getTime()/ (1000 * 60 * 60 * 24));
+    if (element.status === "Todo" &&
+    today - startDay> 0 &&
     (Math.floor(today-startDay, period) > Math.floor(lastUpdateDay-startDay, period))){
       console.log('false');
+      this.updateStatus(element._id, 'Doing');
       return false;
     }else{
       console.log('true');
@@ -211,7 +201,7 @@ export default class BlocksList extends Component {
       })
   }
 
-  //by junfeng 
+  //by junfeng
   // update lastUpdateDate
   updateLastUpdateDate(id) {
     axios.get('http://localhost:5000/blocks/' + id)
