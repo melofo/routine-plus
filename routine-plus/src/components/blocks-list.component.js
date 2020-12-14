@@ -118,29 +118,26 @@ export default class BlocksList extends Component {
   }
   componentDidMount() {
     setTimeout(() => {
-      const today = new Date().getTime() / (1000 * 60 * 60 * 24); // by junfeng
-      axios.get('http://localhost:5000/blocks/', { headers: { "x-auth-token": localStorage.getItem("auth-token") } }) //by junfeng
-        .then(response => {
-          const bks = response.data
-          const todo = bks.filter((b) => b.status === 'Todo' && this.checkDate(b))
-          const doing = bks.filter((b) => !this.checkDate(b) || b.status === 'Doing')
-          const done = bks.filter((b) => b.status === 'Done')
-          // console.log('todo: ', todo)
-          // console.log('doing: ', doing)
-          // console.log('done: ', done)
+    const today = new Date().getTime()/ (1000 * 60 * 60 * 24); // by junfeng
+    axios.get('http://localhost:5000/blocks/', { headers: { "x-auth-token": localStorage.getItem("auth-token") } }) //by junfeng
+      .then(response => {
+        const bks = response.data
+        const todo = bks.filter((b) => b.status === 'Backlog' && this.checkDate(b))
+        const doing = bks.filter((b) => !this.checkDate(b) || b.status === 'Sprint')
+        const done = bks.filter((b) => b.status === 'Archive')
           this.setState({
             blocks: bks,
             columns: {
               [uuid()]: {
-                name: "Todo",
+                name: "Backlog",
                 items: todo
               },
               [uuid()]: {
-                name: "Doing",
+                name: "Sprint",
                 items: doing
               },
               [uuid()]: {
-                name: "Done",
+                name: "Archive",
                 items: done
               }
             },
@@ -157,13 +154,23 @@ export default class BlocksList extends Component {
   checkDate(element) {
     const today = new Date().getTime() / (1000 * 60 * 60 * 24);
     let period = element.routine;
-    let startDay = new Date(element.date).getTime() / (1000 * 60 * 60 * 24);
-    let lastUpdateDay = new Date(element.lastUpdateDate).getTime() / (1000 * 60 * 60 * 24);
-    if (element.status === "Todo" &&
-      today - startDay > 0 &&
-      (Math.floor(today - startDay, period) > Math.floor(lastUpdateDay - startDay, period))) {
+    if(period == 'daily') {
+      period = 1
+    }
+    if(period == 'weekly') {
+      period = 7
+    }
+    if(period == 'monthly') {
+      period = 30
+    }
+    console.log("period: " + period)
+    let startDay = new Date(element.date).getTime()/ (1000 * 60 * 60 * 24);
+    let lastUpdateDay = new Date(element.lastUpdateDate).getTime()/ (1000 * 60 * 60 * 24);
+    if (element.status === "Backlog" &&
+    today - startDay> 0 &&
+    (Math.floor(today-startDay, period) > Math.floor(lastUpdateDay-startDay, period))){
       console.log('false');
-      this.updateStatus(element._id, 'Doing');
+      this.updateStatus(element._id, 'Sprint');
       return false;
     } else {
       console.log('true');

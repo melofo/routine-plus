@@ -71,6 +71,7 @@ export default class EditBlock extends Component {
     window.location = '/blocks';
   }
   render() {
+    const routines = ["daily", "weekly", "monthly"]
     return (
       <div className="edit-container d-flex justify-content-center align-items-center">
         <form onSubmit={this.onSubmit}>
@@ -84,15 +85,13 @@ export default class EditBlock extends Component {
               placeholder="Task"
             />
           </div>
-          <div className="form-group">
-          <label className="routine-label">Routine:</label>
-            <input type="text"
-              required
-              className="input-field"
-              value={this.state.routine}
-              onChange={this.onChangeRoutine}
-              placeholder="Routine"
-            />
+          <div className="form-group"> 
+            <label>Routine: </label>
+            <select required className="form-control" value={this.state.routine} onChange={this.onChangeRoutine}> {
+              routines.map(function(routine) {
+                return <option key={routine} value={routine}>{routine}</option>;
+              })}
+            </select>
           </div>
           <div className="form-group">
             <label className="date-label">Date: </label>
@@ -100,7 +99,6 @@ export default class EditBlock extends Component {
               <DatePicker className="input-date"
                 selected={this.state.date}
                 onChange={this.onChangeDate}
-
               />
             </div>
           </div>
