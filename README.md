@@ -9,6 +9,14 @@
 
 </h1>
   <h3 align="center">Routine Plus. A Better You. Everyday</h3>
+<p align="center">
+  <a href="#welcome-to-routine-">Introduction</a> •
+  <a href="#routine--website">Website</a> •
+  <a href="#software-development-process">Process</a> •
+  <a href="#credits">Credits</a> •
+  <a href="#related">Related</a> •
+  <a href="#license">License</a>
+</p>
 
 
 | Directory | Description |
@@ -16,15 +24,15 @@
 | docs/ | Project landing page, communications plan, APIs, requirements, design, architecture, test plan, team organization PDFs |
 | routine-plus/ | Main codebase of the project |
 
-## Welcome to Routine+ !
+## Welcome to Routine+
 Routine+ is an online platform for individuals or teams to organize daily/weekly/monthly routines by creating task boards with different columns and dragging and dropping the tasks between them. It features a beautiful drag-and-drop UI to allow a user to seamlessly manage their Tasks.
 
 The application is a full-stack service that is built using the MERN stack and external libraries such as axios, mongoose, and react-beautiful-rnd.
 
-## Deployed Routine+ website (coming soon..)
+## Routine+ Website
 ## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
   
-## Software Development Process (Methodology):
+## Software Development Process
 * Agile
 
 ## Project Team
@@ -47,11 +55,17 @@ The application is a full-stack service that is built using the MERN stack and e
 
 ## Instructions
 * Routine Plus allows you to keep track of all the Routines you wish to integrate into your life style
-* After you created a Routine, it could have a daily/weekly/monthly frequency, the Routine will appear in the "Do It" block
+* After you created a Routine, it could have a daily/weekly/monthly frequency, the Routine will appear in the "Sprint" block, awaiting to be completed
 * Whenever you complete this Routine, drag and drop the Routine into the "Backlog" block
-* Routine+ automatically moves the Routine to the "Do It" block when the set frequency date range has been reached
+* Routine+ automatically moves the Routine to the "Sprint" block when the set frequency date range has been reached
 * Drag your Routine to the "Archive" block whenever you are feel like breaking away from this Routine and want to keep it for records
 
+<h5> A new Routine has been created witing to be completed</h5>
+<img src="./1.jpg" width="700" height="400">
+<h5> After working out, simply drag and rop the Routine to the Backlog block <br> and let the Routine+ do the rest!</h5>
+<img src="./2.jpg" width="700" height="400">
+<h5> Since this is a weekly routine, Routine+ will move it back to the "Spring" when it reached the 7th day</h5>
+<img src="./1.jpg" width="700" height="400">
 
 
 ## File Organization
