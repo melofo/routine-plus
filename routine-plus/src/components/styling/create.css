@@ -16,13 +16,15 @@
 }
 
 .create-form {
-  width: 40%;
-  padding: 30px;
+  width: 45%;
+  height: 100%;
+  padding: 3%;
   background: rgba(0, 128, 128, .7);
   transition: .2s;
-  position: relative;
-  left: 649px;
-  bottom: -16px;
+  position: sticky;
+  left: 100%;
+  /* left: 649px;
+  bottom: -16px; */
   font-family: 'Baloo Thambi 2', cursive;
 }
 

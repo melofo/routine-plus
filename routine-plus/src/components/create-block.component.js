@@ -137,8 +137,9 @@ export default class CreateBlock extends Component {
             </div>
             <div className="form-group">
               <input type="submit" value="Create Routine" className="btn btn-neon" />
-              <button class="btn btn-cancel" onClick={this.onButtonCancel}>Cancel</button>
             </div>
+            <button class="btn btn-cancel" onClick={this.onButtonCancel}>Cancel</button>
+
           </form>
         </div>
       </div>
