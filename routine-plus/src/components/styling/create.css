@@ -79,6 +79,7 @@
 .btn-cancel {
   outline: solid 1px;
   color: #ff3333;
+  margin-left: 10px;
 }
 
 .edit-container {
