@@ -11,7 +11,7 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Styles from './styling/home.scss';
 //front end logo
-import Logo from "./images/logoDark.png";
+import Logo from "./images/logo.png";
 import Image from 'react-bootstrap/Image'
 
 
@@ -69,81 +69,74 @@ export default function Home() {
 
       <Row className="no-gutters">
         <Col className="no-gutters">
+        <div className="right-top d-flex justify-content-center align-items-center" tabindex="2">
+        
+          <Image src="./images/logo.png" placeholder="logo"/>
 
-          <div className="left-side d-flex justify-content-center align-items-center" tabindex="-1">
-            <a href="https://www.youtube.com/watch?v=LQ8JOsc3-wU&t=2s&ab_channel=MedSchoolInsiders">
-              <Image className="left-logo" src={Logo} alt="logo routine plus"/>
-            </a>
-          </div>
+
+
+          <Form onSubmit={loginSubmit} className="login-button">
+            <Form.Group controlId="formBasicUserName">
+              <Form.Label>Username</Form.Label>
+              <Form.Control type="text" placeholder="Enter Username"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Sign In
+            </Button>
+            <div className="error-message-1">{error && (<div><span>{error}</span></div>)} </div>
+          </Form>
+
+          <h3 className="regular-text"> Existing User</h3>
+        </div>
 
         </Col>
 
 
         <Col className="no-gutters">
-          <Row className="no-gutters">
-            <div className="right-top d-flex justify-content-center align-items-center" tabindex="2">
+
+        <div className="right-bottom d-flex justify-content-center align-items-center" tabindex="2">
 
 
+            <Form onSubmit={RegisterSubmit} className="signup-button">
+              <Form.Group controlId="formBasicUserName">
+                <Form.Label>New Username</Form.Label>
+                <Form.Control type="text" placeholder="Set New Username"
+                onChange={(e) => setUsername(e.target.value)}
+                />
+              </Form.Group>
 
-              <Form onSubmit={loginSubmit} className="login-button">
-                <Form.Group controlId="formBasicUserName">
-                  <Form.Label>Username</Form.Label>
-                  <Form.Control type="text" placeholder="Enter Username"
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                </Form.Group>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>Set Password</Form.Label>
+                <Form.Control type="password" placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                 />
+                <Form.Text className="text-muted">
+                  Never share your password with anyone. Not even your boyfriend.
+                </Form.Text>
+              </Form.Group>
+              <Form.Group controlId="formPasswordConfirm">
+                <Form.Label>Re-Enter Password</Form.Label>
+                <Form.Control type="password" placeholder="Password"
+                  onChange={(e) => setPasswordCheck(e.target.value)}
+                 />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Sign Up
+              </Button>
+              <div className="error-message-2">{error && (<div><span>{error}</span></div>)} </div>
+            </Form>
 
-                <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                  Sign In
-                </Button>
-                <div className="error-message-1">{error && (<div><span>{error}</span></div>)} </div>
-              </Form>
-
-              <h3 className="regular-text"> Existing User</h3>
-            </div>
-          </Row>
-          <Row className="no-gutters">
-            <div className="right-bottom d-flex justify-content-center align-items-center" tabindex="2">
-
-
-                <Form onSubmit={RegisterSubmit} className="signup-button">
-                  <Form.Group controlId="formBasicUserName">
-                    <Form.Label>New Username</Form.Label>
-                    <Form.Control type="text" placeholder="Set New Username"
-                    onChange={(e) => setUsername(e.target.value)}
-                    />
-                  </Form.Group>
-
-                  <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Set Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password"
-                      onChange={(e) => setPassword(e.target.value)}
-                     />
-                    <Form.Text className="text-muted">
-                      Never share your password with anyone. Not even your boyfriend.
-                    </Form.Text>
-                  </Form.Group>
-                  <Form.Group controlId="formPasswordConfirm">
-                    <Form.Label>Re-Enter Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password"
-                      onChange={(e) => setPasswordCheck(e.target.value)}
-                     />
-                  </Form.Group>
-                  <Button variant="primary" type="submit">
-                    Sign Up
-                  </Button>
-                  <div className="error-message-2">{error && (<div><span>{error}</span></div>)} </div>
-                </Form>
-
-              <h3 className="regular-text"> New User</h3>
-            </div>
-          </Row>
+          <h3 className="regular-text"> New User</h3>
+        </div>
         </Col>
       </Row>
 
