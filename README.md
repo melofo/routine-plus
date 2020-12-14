@@ -10,7 +10,7 @@ Routine+ is an online platform for individuals or teams to organize daily/weekly
 
 The application is a full-stack service that is built using the MERN stack and external libraries such as axios, mongoose, and react-beautiful-rnd.
 
-## Deployed Routine+ website (coming soon..)
+## [Deployed Routine+ website] (https://routine-plus.herokuapp.com/)
 ## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
   
 ## Methodology:
@@ -27,7 +27,7 @@ The application is a full-stack service that is built using the MERN stack and e
 * Log in: log in an account
 * Log out: log out an account
 * Create: create a routine inside "to do" block
-* Drag and Drop: move routines between "to do", "doing" and "done" blocks acccording to their status
+* Drag and Drop: move routines from "Sprint" to "Backlog" to mark it done for this round or move it to "Archive" to mark that we would not take the routine for now
 * Edit: edit an exist routine
 * Delete: delete a routine
 
