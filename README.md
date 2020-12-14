@@ -8,7 +8,7 @@
   <br>
 
 </h1>
-  <h3 align="center">Routine Plus. Better You. Everyday</h3>
+  <h3 align="center">Routine Plus. A Better You. Everyday</h3>
 
 
 | Directory | Description |
@@ -24,23 +24,35 @@ The application is a full-stack service that is built using the MERN stack and e
 ## Deployed Routine+ website (coming soon..)
 ## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
   
-## Methodology:
+## Software Development Process (Methodology):
 * Agile
 
-## Project team
-* Junfeng Zhou(zjf) - 001372433
-* Vy Thai(thaivy) 
-* Yuan Yao(melofo) (primary representative) - 001080783
-* Wei Nien Chen(wtg30303) (alternate  representative) - 001166046
+## Project Team
+
+| Name | GitHub Handle |
+| --- | --- | 
+| Junfeng Zhou | zjf |
+| Vy Thai | Thaivy| 
+| Yuan Yao| melofo | 
+| Wei Nien Chen | wtg30303 | 
 
 ## Features
 * Sign up: create a new user
 * Log in: log in an account
 * Log out: log out an account
-* Create: create a routine inside "to do" block
-* Drag and Drop: move routines between "to do", "doing" and "done" blocks acccording to their status
-* Edit: edit an exist routine
-* Delete: delete a routine
+* Create: Create a new Routine
+* Edit: Edit an existing Routine
+* Delete: Delete a Routine
+* Drag and drop Routine to any block as you see fit
+
+## Instructions
+* Routine Plus allows you to keep track of all the Routines you wish to integrate into your life style
+* After you created a Routine, it could have a daily/weekly/monthly frequency, the Routine will appear in the "Do It" block
+* Whenever you complete this Routine, drag and drop the Routine into the "Backlog" block
+* Routine+ automatically moves the Routine to the "Do It" block when the set frequency date range has been reached
+* Drag your Routine to the "Archive" block whenever you are feel like breaking away from this Routine and want to keep it for records
+
+
 
 ## File Organization
 Repo  
