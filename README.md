@@ -1,4 +1,15 @@
-## Repository directory
+
+<h1 align="center">
+  <br>
+  <img src="./website-logo.png" width="250" height="250">
+  <br>
+  Routine+
+  
+  <br>
+
+</h1>
+  <h3 align="center">Routine Plus. Better You. Everyday</h3>
+
 
 | Directory | Description |
 | --- | --- |

@@ -20,7 +20,7 @@ class Block extends Component {
           </div>
         </Col>
 
-        <Col className="px-4" sm={9}>
+        <Col className="px-4" sm={9} style={{ whiteSpace: "normal", wordBreak: "break-all" }}>
           <h4 className="task-text">{this.props.block.task}</h4>
           <p>{this.props.block.routine}</p>
           <p style={{ color: "rgba(255, 110, 255, 0.5)" }}>{this.props.block.date.substring(0, 10)}</p>
@@ -151,8 +151,8 @@ export default class BlocksList extends Component {
     }, 300)
   }
   // false when from todo to doing, true when do nothing
-  checkDate(element){
-    const today = new Date().getTime()/ (1000 * 60 * 60 * 24);
+  checkDate(element) {
+    const today = new Date().getTime() / (1000 * 60 * 60 * 24);
     let period = element.routine;
     if(period == 'daily') {
       period = 1
@@ -172,7 +172,7 @@ export default class BlocksList extends Component {
       console.log('false');
       this.updateStatus(element._id, 'Sprint');
       return false;
-    }else{
+    } else {
       console.log('true');
       return true;
     }
