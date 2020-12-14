@@ -11,7 +11,7 @@
   <h3 align="center">Routine Plus. A Better You. Everyday</h3>
 <p align="center">
   <a href="#welcome-to-routine">Introduction</a> •
-  <a href="#routine-website">Website</a> •
+  <a href="#links">Links</a> •
   <a href="#software-development-process">Process</a> •
   <a href="#project-team">Project Team</a> •
   <a href="#features">Key Features</a> •
@@ -32,8 +32,9 @@ Routine+ is an online platform for individuals or teams to organize daily/weekly
 
 The application is a full-stack service that is built using the MERN stack and external libraries such as axios, mongoose, and react-beautiful-rnd.
 
-## Routine+ Website
-## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
+## Links
+* Routine+ Website
+* [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
   
 ## Software Development Process
 * Agile
