@@ -82,12 +82,13 @@ img.right-top {
 /* right side hover logic */
 .right-top:hover, .right-bottom:hover {
   box-shadow: -1px -1px 10px 3px #FF6EFF inset, 1px 1px 10px 3px #FF6EFF inset;
-  // background-image: url("../images/bk3 copy 2.jpg");
+  cursor: pointer;
+
 }
 
 .right-bottom:hover {
   box-shadow: -1px -1px 10px 3px #FF6EFF inset, 1px 1px 10px 3px #FF6EFF inset;
-  // background-image: url("../images/bk3 copy 4.jpg");
+  cursor: pointer;
 }
 
 .right-top .form-group, .right-bottom .form-group, .login-button, .signup-button {
