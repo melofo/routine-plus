@@ -30,7 +30,12 @@ export default class CreateBlock extends Component {
     // console.log("We are here");
     const file = document.getElementById("inputGroupFile01").files;
     const fileChosen = document.getElementById("file-chosen");
-    fileChosen.textContent = file[0].name;
+    if (file[0].name.length > 12) {
+        fileChosen.textContent = file[0].name.slice(0,13) + "...";
+    }
+    else {
+      fileChosen.textContent = file[0].name;
+    }
   }
 
   onChangeImage() {
@@ -103,7 +108,7 @@ export default class CreateBlock extends Component {
             <div className="mb-3">
               <Form.File id="formcheck-api-regular">
                 <Form.File.Label className="psuedo-upload btn btn-neon" htmlFor="inputGroupFile01">Select an Image</Form.File.Label> {/* custom upload button, actually a label*/}
-                <span id="file-chosen" style={{paddingLeft: "10px"}}> No file chosen</span> {/* file-chosen*/}
+                <span id="file-chosen" style={{paddingLeft: "10px", color: "grey"}}> No file chosen</span> {/* file-chosen*/}
                 <Form.File.Input id="inputGroupFile01" className="input-field" onChange={this.onChangeFileInputName} hidden/> {/* actual-btn*/}
               </Form.File>
             </div>
@@ -133,16 +138,16 @@ export default class CreateBlock extends Component {
           />
         </div>
         <div className="form-group">
-          <label>Date: </label>
+          <label className="date-label">Date: </label>
           <div>
-            <DatePicker
+            <DatePicker className="input-date-create"
               selected={this.state.date}
               onChange={this.onChangeDate}
             />
           </div>
         </div>
         <div className="form-group">
-          <input type="submit" value="Create Block Log" className="btn btn-neon" />
+          <input type="submit" value="Create Routine" className="btn btn-neon" />
         </div>
         <button class="btn btn-cancel" onClick={this.onButtonCancel}>Cancel</button>
       </form>
