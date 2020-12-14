@@ -76,7 +76,7 @@ export default class EditBlock extends Component {
       <div className="edit-container d-flex justify-content-center align-items-center">
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-          <label className="task-label">Task:</label>
+            <label className="task-label">Task:</label>
             <input type="text"
               required
               className="input-field"
@@ -85,10 +85,10 @@ export default class EditBlock extends Component {
               placeholder="Task"
             />
           </div>
-          <div className="form-group"> 
+          <div className="form-group">
             <label>Routine: </label>
             <select required className="form-control" value={this.state.routine} onChange={this.onChangeRoutine}> {
-              routines.map(function(routine) {
+              routines.map(function (routine) {
                 return <option key={routine} value={routine}>{routine}</option>;
               })}
             </select>
@@ -104,9 +104,10 @@ export default class EditBlock extends Component {
           </div>
           <div className="form-group">
             <input type="submit" value="Edit Block Log" className="btn btn-neon" />
+
           </div>
+          <button class="btn btn-cancel btn-sm" onClick={this.onButtonCancel}>Cancel</button>
         </form>
-        <button id="edit-cancel-btn" class="btn btn-cancel" onClick={this.onButtonCancel}>Cancel</button>
       </div>
     )
   }
