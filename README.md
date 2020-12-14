@@ -4,7 +4,7 @@
   <img src="./website-logo.png" width="250" height="250">
   <br>
   Routine+
-  [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+  
   <br>
 
 </h1>
