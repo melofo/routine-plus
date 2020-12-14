@@ -22,7 +22,7 @@ export default class CreateBlock extends Component {
       task: '',
       routine: '',
       date: new Date(),
-      status: 'Todo'
+      status: 'Todo',
     }
   }
   //event listener to change name of span
