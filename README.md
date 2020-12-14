@@ -11,11 +11,14 @@
   <h3 align="center">Routine Plus. A Better You. Everyday</h3>
 <p align="center">
   <a href="#welcome-to-routine">Introduction</a> •
-  <a href="#routine--website">Website</a> •
+  <a href="#routine-website">Website</a> •
   <a href="#software-development-process">Process</a> •
-  <a href="#credits">Credits</a> •
-  <a href="#related">Related</a> •
-  <a href="#license">License</a>
+  <a href="#project-team">Project Team</a> •
+  <a href="#features">Key Features</a> •
+  <a href="#instructions">Instructions</a>
+  <a href="#file-organization">File Organization</a>
+  <a href="#set-up">Set Up</a>
+  <a href="#how-to-run">How to Run</a>
 </p>
 
 
