@@ -20,7 +20,11 @@
 
 * **Repository** (?/15)
 
-* **Functionality** (?/15)
+* **Functionality** (15/15)  
+This factor evaluates the functionality implemented by the product. 
+  * [x]  the functionality provided matches the requirements documented in the product requirements specification
+  * [x]  the implemenation of the functionality is adequate to support the intended use of the product
+  * [x]  feature set provided seems reasonable for the size of the project team
 
 * **Organization** (?/15)
 
