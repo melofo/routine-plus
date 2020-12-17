@@ -28,4 +28,9 @@
 
 * **Code** (?/10)
 
-* **Documents** (?/15)
+* **Documents** (15/15)(YH)  
+This factor evaluates the external project documentation. Including: Project organization, Requirements, Features, Functionality interfaces/APIS, Design, Commumincation plans, Test plans.
+  * Excellent external documentation!
+    *  All the external documentation can be found easily in the docs folder and they are very organized, including very detailed Project organization, Requirements, Features, Functionality interfaces/APIS, Design, Commumincation plans, Test plans. 
+    *  A clear link direct reader to all the documentation in readme
+    *  Very beautiful readme file.
