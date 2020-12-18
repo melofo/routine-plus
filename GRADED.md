@@ -40,7 +40,11 @@ This factor evaluates the organization of the repository, including the structur
 
 * **Methodology** (?/15)
 
-* **Code** (?/10)
+* **Code** (8/10) (Na and Abdul)
+This factor evaluates the project code to ensure that it follows good engineering practices, including the quality of the code, whether the code includes adequate documentation, whether any tests are provided for the code, whether there are scripts for building or packaging the code, and whether there is any external documentation describing the code, its organization, and how to build or deploy it.
+* Feedback
+     * Insufficient documentation to describe the code
+     * No real unit testing of code
 
 * **Documents** (15/15)(YH)  
 This factor evaluates the external project documentation. Including: Project organization, Requirements, Features, Functionality interfaces/APIS, Design, Commumincation plans, Test plans.
