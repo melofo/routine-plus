@@ -18,7 +18,12 @@
       * give other team members a chance to gain experience
     * Maybe a little less focus on "marketing"
 
-* **Repository** (?/15)
+* **Repository** (15/15) (Na and Abdul)
+This factor evaluates the repository history, including whether the history of the development is reflected in the repository history, how branches were used, and the use of pull requests.
+* Feedback
+     * [x] Repository demonstrates good history with commits and branches
+     * [x] Use Pull requests
+
 
 * **Functionality** (15/15)  
 This factor evaluates the functionality implemented by the product. 
@@ -26,7 +31,12 @@ This factor evaluates the functionality implemented by the product.
   * [x]  the implemenation of the functionality is adequate to support the intended use of the product
   * [x]  feature set provided seems reasonable for the size of the project team
 
-* **Organization** (?/15)
+* **Organization** (15/15) (Na and Abdul)
+This factor evaluates the organization of the repository, including the structure of the repository and its contents, and whether the repository directories provide descriptions of the contents (e.g. with "README.md" files)
+* Feedback
+     * Clear separation of code and documents
+     * Repository is well-structured
+
 
 * **Methodology** (?/15)
 
