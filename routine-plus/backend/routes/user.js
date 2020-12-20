@@ -4,8 +4,6 @@ const jwt = require("jsonwebtoken");
 const auth = require("../middleware/auth");
 const User = require("../models/user.model");
 
-// I know it should be kept secret, but for your convience, I put it here
-JWT_SECRET = "qwertyuiopasdfghjklzxcvbnm"
 
 router.post("/register", async (req, res) => {
   try {
@@ -58,7 +56,7 @@ router.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
 
-    const token = jwt.sign({ id: user._id }, JWT_SECRET);
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.json({
       token,
       user: {
@@ -77,7 +75,7 @@ router.post("/tokenIsValid", async (req, res) => {
     const token = req.header("x-auth-token");
     if (!token) return res.json(false);
 
-    const verified = jwt.verify(token, JWT_SECRET);
+    const verified = jwt.verify(token,  process.env.JWT_SECRET);
     if (!verified) return res.json(false);
 
     const user = await User.findById(verified.id);

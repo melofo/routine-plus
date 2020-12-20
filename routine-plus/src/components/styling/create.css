@@ -1,0 +1,125 @@
+
+
+.create-container {
+  /* background-image: url("../images/create-background.png");
+  background-color: black; */
+  padding-top: 100px;
+  width: -webkit-fill-available;
+  color: white;
+}
+.test {
+  background-image: url("../images/create-background.png");
+  background-color: black;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 570px;
+}
+
+.create-form {
+  width: 40%;
+  padding: 30px;
+  background: rgba(0, 128, 128, .7);
+  transition: .2s;
+  position: relative;
+  left: 649px;
+  bottom: -16px;
+  font-family: 'Baloo Thambi 2', cursive;
+}
+
+.create-form h2 {
+  font-weight: 900;
+  font-family: 'Codystar', cursive;
+  color: #33ffff;
+
+}
+
+.input-field {
+  margin: 15px 0;
+  font-size: 16px;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #15f4b8;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(20, 20, 20, .2);
+  color: white;
+  outline: none;
+  font-family: 'Baloo Thambi 2', cursive;
+
+
+}
+.create-form .form-file {
+  position: relative;
+  top: 24px;
+}
+
+/* style custom form choose file button */
+/* trick is to hide the actual button and style form like a button */
+.form-file-label, .btn-neon {
+   background: #15f4b8 !important;
+   color: #1d1d1d !important;
+   cursor: pointer;
+   font-size: 15px;
+   padding: 0.7rem 1rem;
+   border: 0;
+   transition: all 0.4s;
+   border-radius: 10px;
+   width: auto;
+   position: relative;
+
+  font-family: 'Baloo Thambi 2', cursive;
+}
+
+.form-file-label:hover, .btn-neon:hover {
+    border-radius: 10px;
+    box-shadow: 0 0 10px #15f4b8;
+}
+
+.btn-cancel {
+  outline: solid 1px;
+  color: #ff3333;
+  margin-left: 10px;
+}
+
+.edit-container {
+  /* background-image: url("../images/create-background.png");
+  background-color: black; */
+  padding-top: 100px;
+  width: -webkit-fill-available;
+  color: white;
+}
+
+#edit-cancel-btn {
+  position: relative;
+  top: 180px;
+  right: 246px;
+}
+
+/* label for create */
+.task-label, .routine-label {
+  position: fixed;
+  font-family: 'Baloo Thambi 2', cursive;
+}
+
+.date-label {
+  font-family: 'Baloo Thambi 2', cursive;
+}
+
+.input-date {
+  font-family: 'Baloo Thambi 2', cursive;
+  color: #08deff;
+  background-color: #11141B;
+  outline-color: #08deff;
+  outline-style: solid;
+  outline-width: thin;
+}
+
+.input-date-create {
+  font-family: 'Baloo Thambi 2', cursive;
+  color: white;
+  background-color: #114B4B;
+  outline-color: #15f4b8;
+  outline-style: solid;
+  outline-width: thin;
+}

@@ -4,6 +4,13 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
 
+//front end
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import './styling/create.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
 export default class EditBlock extends Component {
   constructor(props) {
     super(props);
@@ -64,41 +71,43 @@ export default class EditBlock extends Component {
     window.location = '/blocks';
   }
   render() {
+    const routines = ["daily", "weekly", "monthly"]
     return (
-      <div>
+      <div className="edit-container d-flex justify-content-center align-items-center">
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Task: </label>
+            <label className="task-label">Task:</label>
             <input type="text"
               required
-              className="form-control"
+              className="input-field"
               value={this.state.task}
               onChange={this.onChangeTask}
+              placeholder="Task"
             />
           </div>
           <div className="form-group">
             <label>Routine: </label>
-            <input type="text"
-              required
-              className="form-control"
-              value={this.state.routine}
-              onChange={this.onChangeRoutine}
-            />
+            <select required className="form-control" value={this.state.routine} onChange={this.onChangeRoutine}> {
+              routines.map(function (routine) {
+                return <option key={routine} value={routine}>{routine}</option>;
+              })}
+            </select>
           </div>
           <div className="form-group">
-            <label>Date: </label>
+            <label className="date-label">Date: </label>
             <div>
-              <DatePicker
+              <DatePicker className="input-date"
                 selected={this.state.date}
                 onChange={this.onChangeDate}
               />
             </div>
           </div>
           <div className="form-group">
-            <input type="submit" value="Edit Block Log" className="btn btn-primary" />
+            <input type="submit" value="Edit Block Log" className="btn btn-neon" />
+
           </div>
+          <button class="btn btn-cancel btn-sm" onClick={this.onButtonCancel}>Cancel</button>
         </form>
-        <button onClick={this.onButtonCancel}>Cancel</button>
       </div>
     )
   }

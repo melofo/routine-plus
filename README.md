@@ -1,35 +1,78 @@
-## Repository directory
+
+<h1 align="center">
+  <br>
+  <img src="./website-logo.png" width="250" height="250">
+  <br>
+  Routine+
+  
+  <br>
+
+</h1>
+  <h3 align="center">Routine Plus. A Better You. Everyday</h3>
+<p align="center">
+  <a href="#welcome-to-routine">Introduction</a> •
+  <a href="#links">Links</a> •
+  <a href="#software-development-process">Process</a> •
+  <a href="#project-team">Project Team</a> •
+  <a href="#features">Key Features</a> •
+  <a href="#instructions">Instructions</a>
+  <a href="#file-organization">File Organization</a>
+  <a href="#set-up">Set Up</a>
+  <a href="#how-to-run">How to Run</a>
+</p>
+
 
 | Directory | Description |
 | --- | --- |
 | docs/ | Project landing page, communications plan, APIs, requirements, design, architecture, test plan, team organization PDFs |
 | routine-plus/ | Main codebase of the project |
 
-## Welcome to Routine+ !
+## Welcome to Routine+
 Routine+ is an online platform for individuals or teams to organize daily/weekly/monthly routines by creating task boards with different columns and dragging and dropping the tasks between them. It features a beautiful drag-and-drop UI to allow a user to seamlessly manage their Tasks.
 
 The application is a full-stack service that is built using the MERN stack and external libraries such as axios, mongoose, and react-beautiful-rnd.
 
+
 ## [Deployed Routine+ website](https://routine-plus.herokuapp.com/)
 ## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
+
   
-## Methodology:
+## Software Development Process
 * Agile
 
-## Project team
-* Junfeng Zhou(zjf) - 001372433
-* Vy Thai(thaivy) 
-* Yuan Yao(melofo) (primary representative) - 001080783
-* Wei Nien Chen(wtg30303) (alternate  representative) - 001166046
+## Project Team
+
+| Name | GitHub Handle |
+| --- | --- | 
+| Junfeng Zhou | zjf |
+| Vy Thai | Thaivy| 
+| Yuan Yao| melofo | 
+| Wei Nien Chen | wtg30303 | 
 
 ## Features
 * Sign up: create a new user
 * Log in: log in an account
 * Log out: log out an account
+
 * Create: create a routine inside "to do" block
 * Drag and Drop: move routines from "Sprint" to "Backlog" to mark it done for this round or move it to "Archive" to mark that we would not take the routine for now
 * Edit: edit an exist routine
 * Delete: delete a routine
+
+
+## Instructions
+* Routine Plus allows you to keep track of all the Routines you wish to integrate into your life style
+* After you created a Routine, it could have a daily/weekly/monthly frequency, the Routine will appear in the "Sprint" block, awaiting to be completed
+* Whenever you complete this Routine, drag and drop the Routine into the "Backlog" block
+* Routine+ automatically moves the Routine to the "Sprint" block when the set frequency date range has been reached
+* Drag your Routine to the "Archive" block whenever you are feel like breaking away from this Routine and want to keep it for records
+
+<h5> A new Routine has been created witing to be completed</h5>
+<img src="./1.jpg" width="700" height="400">
+<h5> After working out, simply drag and rop the Routine to the Backlog block <br> and let the Routine+ do the rest!</h5>
+<img src="./2.jpg" width="700" height="400">
+<h5> Since this is a weekly routine, Routine+ will move it back to the "Spring" when it reached the 7th day</h5>
+<img src="./1.jpg" width="700" height="400">
 
 ## File Organization
 Repo  

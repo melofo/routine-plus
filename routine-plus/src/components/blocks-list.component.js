@@ -20,14 +20,14 @@ class Block extends Component {
           </div>
         </Col>
 
-        <Col className="px-4" sm={9}>
+        <Col className="px-4" sm={9} style={{ whiteSpace: "normal", wordBreak: "break-all" }}>
           <h4 className="task-text">{this.props.block.task}</h4>
           <p>{this.props.block.routine}</p>
           <p style={{ color: "rgba(255, 110, 255, 0.5)" }}>{this.props.block.date.substring(0, 10)}</p>
-          {/* <p style={{ color: "rgba(255, 110, 255, 0.5)" }}>{this.props.block.lastUpdateDate.substring(0, 10)}</p> */}
+          {/*<p style={{ color: "rgba(255, 110, 255, 0.5)" }}>{this.props.block.lastUpdateDate.substring(0, 10)}</p>*/}
           <Link to={"/edit/" + this.props.block._id} className="link">edit</Link>
             |
-            <a href="#top" className="link" onClick={() => { this.props.deleteBlock(this.props.block._id) }}>delete</a>
+          <a href="#top" className="link" onClick={() => { this.props.deleteBlock(this.props.block._id) }}>delete</a>
         </Col>
       </Fragment>
     )
@@ -113,7 +113,7 @@ export default class BlocksList extends Component {
   constructor(props) {
     super(props);
     this.deleteBlock = this.deleteBlock.bind(this);
-    
+
     this.state = { blocks: [], columns: [] };
   }
   componentDidMount() {
@@ -122,42 +122,22 @@ export default class BlocksList extends Component {
     axios.get('http://localhost:5000/blocks/', { headers: { "x-auth-token": localStorage.getItem("auth-token") } }) //by junfeng
       .then(response => {
         const bks = response.data
-        //by junfeng
-        // check if the time is up
-        bks.forEach(element => {
-          let period = element.routine;
-          let startDay = new Date(element.date).getTime()/ (1000 * 60 * 60 * 24);
-          let lastUpdateDay = new Date(element.lastUpdateDate).getTime()/ (1000 * 60 * 60 * 24);
-          if (element.status === "Todo" && 
-          today - startDay> 0 && 
-          (Math.floor(today-startDay, period) > Math.floor(lastUpdateDay-startDay, period))){
-            console.log(Math.floor(today-startDay, period));
-            console.log(Math.floor(lastUpdateDay-startDay, period));
-            this.updateStatus(element._id, 'Doing');
-          }
-        });
-
-        
-        const todo = bks.filter((b) => b.status === 'Todo' && this.checkDate(b))
-        const doing = bks.filter((b) => !this.checkDate(b) || b.status === 'Doing')
-        const done = bks.filter((b) => b.status === 'Done')
-        // console.log('todo: ', todo)
-        // console.log('doing: ', doing)
-        // console.log('done: ', done)
-
+        const todo = bks.filter((b) => b.status === 'Backlog' && this.checkDate(b))
+        const doing = bks.filter((b) => !this.checkDate(b) || b.status === 'Sprint')
+        const done = bks.filter((b) => b.status === 'Archive')
           this.setState({
             blocks: bks,
             columns: {
               [uuid()]: {
-                name: "Todo",
+                name: "Backlog",
                 items: todo
               },
               [uuid()]: {
-                name: "Doing",
+                name: "Sprint",
                 items: doing
               },
               [uuid()]: {
-                name: "Done",
+                name: "Archive",
                 items: done
               }
             },
@@ -170,19 +150,29 @@ export default class BlocksList extends Component {
         })
     }, 300)
   }
-
   // false when from todo to doing, true when do nothing
-  checkDate(element){
-    const today = new Date().getTime()/ (1000 * 60 * 60 * 24);
+  checkDate(element) {
+    const today = new Date().getTime() / (1000 * 60 * 60 * 24);
     let period = element.routine;
+    if(period == 'daily') {
+      period = 1
+    }
+    if(period == 'weekly') {
+      period = 7
+    }
+    if(period == 'monthly') {
+      period = 30
+    }
+    console.log("period: " + period)
     let startDay = new Date(element.date).getTime()/ (1000 * 60 * 60 * 24);
     let lastUpdateDay = new Date(element.lastUpdateDate).getTime()/ (1000 * 60 * 60 * 24);
-    if (element.status === "Todo" && 
-    today - startDay> 0 && 
+    if (element.status === "Backlog" &&
+    today - startDay> 0 &&
     (Math.floor(today-startDay, period) > Math.floor(lastUpdateDay-startDay, period))){
       console.log('false');
+      this.updateStatus(element._id, 'Sprint');
       return false;
-    }else{
+    } else {
       console.log('true');
       return true;
     }
@@ -204,25 +194,11 @@ export default class BlocksList extends Component {
         const temp = {
           ...response.data,
           status: newStatus, // update status
-        }
-        console.log(temp)
-        axios.patch('http://localhost:5000/blocks/update/' + id, temp)
-          .then(response => { console.log(response.data) });
-      })
-  }
-
-  //by junfeng 
-  // update lastUpdateDate
-  updateLastUpdateDate(id) {
-    axios.get('http://localhost:5000/blocks/' + id)
-      .then(response => {
-        const temp = {
-          ...response.data,
           lastUpdateDate: new Date(), // update lastUpdateDate
         }
         console.log(temp)
         axios.patch('http://localhost:5000/blocks/update/' + id, temp)
-          .then(response => { console.log(response.data.lastUpdateDate) });
+          .then(response => { console.log(response.data) });
       })
   }
   reorder = (list, startIndex, endIndex) => {
@@ -234,7 +210,6 @@ export default class BlocksList extends Component {
   onDragEnd = (result, columns) => {
     if (!result.destination) return;
     const { source, destination } = result;
-
     if (source.droppableId !== destination.droppableId) {
       const sourceColumn = columns[source.droppableId];
       const sourceItems = [...sourceColumn.items];
@@ -242,12 +217,10 @@ export default class BlocksList extends Component {
       const destItems = [...destColumn.items];
       const [removed] = sourceItems.splice(source.index, 1);
       destItems.splice(destination.index, 0, removed);
-
       // console.log(source.index)
       // console.log(destination.index)
       // console.log(this.state.blocks)
       // console.log(destItems)
-
       // let tempItems = [...this.state.blocks];
       // let temp = this.state.blocks[source.index]
       // console.log(temp)
@@ -258,7 +231,6 @@ export default class BlocksList extends Component {
       // }
       // tempItems[destination.index] = temp[source.index]
       // console.log(tempItems)
-
       this.setState({
         blocks: this.state.blocks,
 
@@ -274,17 +246,13 @@ export default class BlocksList extends Component {
           }
         }
       })
-
       console.log(this.state.blocks)
       this.updateStatus(destItems[destination.index]._id, destColumn.name);
-      this.updateLastUpdateDate(destItems[destination.index]._id);
-
     } else {
       const column = columns[source.droppableId];
       const copiedItems = [...column.items];
       const [removed] = copiedItems.splice(source.index, 1);
       copiedItems.splice(destination.index, 0, removed);
-
       this.setState({
         blocks: this.state.blocks,
 
@@ -331,7 +299,6 @@ export default class BlocksList extends Component {
             </Row>
           )}
       </Fragment>
-
     )
   }
 }

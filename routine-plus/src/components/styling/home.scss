@@ -1,0 +1,130 @@
+@import "~bootstrap/scss/bootstrap";
+
+
+h3.regular-text {
+  font-family: 'Comfortaa', cursive;
+  color: #15f4b8;
+  text-shadow: 1px 1px 0px #9dfdc7;
+
+}
+
+.left-side  {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  border-radius: 5px;
+  left: 0px;
+  background: #094376;
+}
+
+.left-side:hover {
+  box-shadow: -1px -1px 10px 3px #FF6EFF inset, 1px 1px 10px 3px #FF6EFF inset;
+}
+
+// .right-top, .right-bottom {
+//   background: #094376;
+// }
+
+.right-top {
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  border-radius: 5px;
+  background-image: url("../images/bk2 crop1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color:  #ffb3ff;
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: bold;
+  text-shadow: 0.5px 0.5px 0 #990000;
+
+}
+
+.right-bottom {
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  border-radius: 5px;
+  background-image: url("../images/bk2 crop2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color:  #ffb3ff;
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: bold;
+  text-shadow: 0.5px 0.5px 0 #990000;
+
+}
+
+.container {
+  min-height: 100%;
+}
+
+img.left-logo {
+  height: 200px;
+}
+
+img.right-top {
+  z-index: 3;
+}
+
+// error message location
+.disc {
+  width: 24em;
+  height: 16em;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  right: -12em;
+  bottom: 0px;
+  z-index: 0;
+}
+
+/* right side hover logic */
+.right-top:hover, .right-bottom:hover {
+  box-shadow: -1px -1px 10px 3px #FF6EFF inset, 1px 1px 10px 3px #FF6EFF inset;
+  cursor: pointer;
+
+}
+
+.right-bottom:hover {
+  box-shadow: -1px -1px 10px 3px #FF6EFF inset, 1px 1px 10px 3px #FF6EFF inset;
+  cursor: pointer;
+}
+
+.right-top .form-group, .right-bottom .form-group, .login-button, .signup-button {
+  display: none;
+}
+
+.login-button, .signup-button {
+  background-color: rgba(22, 90, 94, 0.3);
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.regular-text {
+  position: absolute;
+}
+
+// right top when focused - show form
+.right-top:focus, .right-top:focus-within{
+  background-image: url("../images/bk3 copy 2.jpg");
+  .form-group, .login-button {
+    display: block;
+  }
+  .regular-text {
+      opacity: 0;
+  }
+
+}
+
+// right bottom when focused - show form
+.right-bottom:focus, .right-bottom:focus-within{
+  background-image: url("../images/bk3 copy 4.jpg");
+  .form-group, .signup-button {
+    display: block;
+  }
+  .regular-text {
+      opacity: 0;
+  }
+
+}
