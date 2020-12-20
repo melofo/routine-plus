@@ -32,9 +32,10 @@ Routine+ is an online platform for individuals or teams to organize daily/weekly
 
 The application is a full-stack service that is built using the MERN stack and external libraries such as axios, mongoose, and react-beautiful-rnd.
 
-## Links
-* [Routine+ Website](https://routine-plus.herokuapp.com/)
-* [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
+
+## [Deployed Routine+ website](https://routine-plus.herokuapp.com/)
+## [Project landing page](https://pages.github.ccs.neu.edu/2020FACS5500SV/project-routine-plus/)
+
   
 ## Software Development Process
 * Agile
@@ -52,10 +53,12 @@ The application is a full-stack service that is built using the MERN stack and e
 * Sign up: create a new user
 * Log in: log in an account
 * Log out: log out an account
-* Create: Create a new Routine
-* Edit: Edit an existing Routine
-* Delete: Delete a Routine
-* Drag and drop Routine to any block as you see fit
+
+* Create: create a routine inside "to do" block
+* Drag and Drop: move routines from "Sprint" to "Backlog" to mark it done for this round or move it to "Archive" to mark that we would not take the routine for now
+* Edit: edit an exist routine
+* Delete: delete a routine
+
 
 ## Instructions
 * Routine Plus allows you to keep track of all the Routines you wish to integrate into your life style
@@ -70,7 +73,6 @@ The application is a full-stack service that is built using the MERN stack and e
 <img src="./2.jpg" width="700" height="400">
 <h5> Since this is a weekly routine, Routine+ will move it back to the "Spring" when it reached the 7th day</h5>
 <img src="./1.jpg" width="700" height="400">
-
 
 ## File Organization
 Repo  
