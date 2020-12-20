@@ -18,8 +18,7 @@ app.use(express.json());
 
 
 // directly use uri here for your convience
-//const uri = process.env.ATLAS_URI;
-const uri = "mongodb+srv://Junfeng:Junfeng@cluster0.5awtz.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri = process.env.URI;
 mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true});
 const connection = mongoose.connection;
 connection.once('open', ()=>{
